@@ -3,17 +3,31 @@ import React, { useState } from "react";
 const NameGuess = () => {
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");
 
-	const [submittedName, setSubmittedName] = useState("");
+	const [submittedValue, setSubmittedValue] = useState("");
 
 	const nameLog = (event: any) => {
-		setSubmittedName(event.target.value);
+		setSubmittedValue(event.target.value);
 	};
 
+	const addToQuestionsList = () => {
+        let existing = localStorage.getItem('questionsList')
+        let currentQuestions = existing !== null ? JSON.parse(existing) : []
+        if (card.type.includes(submittedValue)) {
+            currentQuestions.push(`This card is ${submittedValue}`)
+            localStorage.setItem('questionsList', JSON.stringify(currentQuestions))    
+        } else {
+            currentQuestions.push(`This card is not ${submittedValue}`)
+            localStorage.setItem('questionsList', JSON.stringify(currentQuestions))      
+        }
+    }
+
 	const nameCheck = (event: any) => {
-		if (submittedName === card.name) {
+		if (submittedValue === card.name) {
 			alert("Correct! Select 'Get a Card!' to play again!");
+			addToQuestionsList()
 		} else {
 			alert("Incorrect! Keep going!");
+			addToQuestionsList()
 		}
 	};
 
@@ -24,7 +38,7 @@ const NameGuess = () => {
 				id="name"
 				name="name"
 				onChange={nameLog}
-				value={submittedName}
+				value={submittedValue}
 			/>
 			<input onClick={nameCheck} type="submit" value="Guess" />
 		</div>

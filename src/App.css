@@ -34,3 +34,7 @@
     transform: rotate(360deg);
   }
 }
+
+.questions-section {
+  padding-top: 2em;
+}

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import AttributeGuess from "./questions/AttributeGuess";
 import NameGuess from "./questions/NameGuess";
+import RaceGuess from "./questions/RaceGuess";
+import TypeGuess from "./questions/TypeGuess";
 
 const QuestionInput = () => {
 	const questions = [
@@ -10,6 +13,14 @@ const QuestionInput = () => {
 		{
 			id: 2,
 			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 3,
+			name: "Card 'Race' (Normal Spell/Trap, Aqua)",
+		},
+		{
+			id: 4,
+			name: "Card Attribute (Dark, Devine)",
 		},
 	];
 
@@ -42,16 +53,17 @@ const QuestionInput = () => {
 					<div>Data loading in progress...</div>
 				)}
 			</datalist>
-			<br />
-			<div>
+			<div className="questions-section">
 				{(() => {
 					switch (selectedQuestion) {
 						case "Card Name":
 							return <NameGuess />;
+						case "Card Attribute (Dark, Devine)":
+							return <AttributeGuess />;
+						case "Card 'Race' (Normal Spell/Trap, Aqua)":
+							return <RaceGuess />; 
 						case "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)":
-							return "hello";
-						default:
-							return "";
+							return <TypeGuess />;
 					}
 				})()}
 			</div>

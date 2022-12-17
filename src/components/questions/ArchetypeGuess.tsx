@@ -160,339 +160,1103 @@ const AttributeGuess = () => {
 		},
         {
 			id: 41,
-			name: "",
+			name: "Cipher",
 		},
 		{
 			id: 42,
-			name: "Bystial",
+			name: "Cloudian",
 		},
 		{
 			id: 43,
-			name: "Chaos",
+			name: "Code Talker",
 		},
 		{
 			id: 44,
-			name: "Chemicritter",
+			name: "Constellar",
 		},
         {
 			id: 45,
-			name: "Chronomaly",
+			name: "Crusadia",
 		},
         {
 			id: 46,
-			name: "Chrysalis",
+			name: "Crystal Beast",
 		},
         {
 			id: 47,
-			name: "Butterspy",
+			name: "Crystron",
 		},
 		{
 			id: 48,
-			name: "Bystial",
+			name: "Cubic",
 		},
 		{
 			id: 49,
-			name: "Chaos",
+			name: "Cyber",
 		},
 		{
 			id: 50,
-			name: "Chemicritter",
+			name: "Cyberdark",
 		},
         {
 			id: 51,
-			name: "Chronomaly",
+			name: "Cyber Dragon",
 		},
         {
 			id: 52,
-			name: "Chrysalis",
+			name: "D/D/",
 		},
         {
 			id: 53,
-			name: "Butterspy",
+			name: "Danger!",
 		},
 		{
 			id: 54,
-			name: "Bystial",
+			name: "Darklord",
 		},
 		{
 			id: 55,
-			name: "Chaos",
+			name: "Dark Magician",
 		},
 		{
 			id: 56,
-			name: "Chemicritter",
+			name: "Dark Scorpion",
 		},
         {
 			id: 57,
-			name: "Chronomaly",
+			name: "Dark World",
 		},
         {
 			id: 58,
-			name: "Chrysalis",
+			name: "D.D.",
 		},
         {
 			id: 59,
-			name: "Butterspy",
+			name: "Deep Sea",
 		},
 		{
 			id: 60,
-			name: "Bystial",
+			name: "Deskbot",
 		},
 		{
 			id: 61,
-			name: "Chaos",
+			name: "Despia",
 		},
 		{
 			id: 62,
-			name: "Chemicritter",
+			name: "Destiny Hero",
 		},
         {
 			id: 63,
-			name: "Chronomaly",
+			name: "Digital Bug",
 		},
         {
 			id: 64,
-			name: "Chrysalis",
+			name: "Dinomist",
 		},
         {
 			id: 65,
-			name: "Butterspy",
+			name: "Dinomorphia",
 		},
 		{
 			id: 66,
-			name: "Bystial",
+			name: "Dinowrestler",
 		},
 		{
 			id: 67,
-			name: "Chaos",
+			name: "Dododo",
 		},
 		{
 			id: 68,
-			name: "Chemicritter",
+			name: "Dogmatika",
 		},
         {
 			id: 69,
-			name: "Chronomaly",
+			name: "Doodle Beast",
 		},
         {
 			id: 70,
-			name: "Chrysalis",
+			name: "Dracoslayer",
 		},
         {
 			id: 71,
-			name: "Butterspy",
+			name: "Dragon Ruler",
 		},
 		{
 			id: 72,
-			name: "Bystial",
+			name: "Dragonmaid",
 		},
 		{
 			id: 73,
-			name: "Chaos",
+			name: "Dragunity",
 		},
 		{
 			id: 74,
-			name: "Chemicritter",
+			name: "Dream Mirror",
 		},
         {
 			id: 75,
-			name: "Chronomaly",
+			name: "Drytron",
 		},
         {
 			id: 76,
-			name: "Chrysalis",
+			name: "Dual Avatar",
 		},
         {
 			id: 77,
-			name: "Butterspy",
+			name: "Duston",
 		},
 		{
 			id: 78,
-			name: "Bystial",
+			name: "Earthbound Immortal",
 		},
 		{
 			id: 79,
-			name: "Chaos",
+			name: "Edge Imp",
 		},
 		{
 			id: 80,
-			name: "Chemicritter",
+			name: "Edlich",
 		},
         {
 			id: 81,
-			name: "Chronomaly",
+			name: "Elemental Hero",
 		},
         {
 			id: 82,
-			name: "Chrysalis",
+			name: "Elementsaber",
 		},
         {
 			id: 83,
-			name: "Butterspy",
+			name: "Empowered Warrior",
 		},
 		{
 			id: 84,
-			name: "Bystial",
+			name: "Endymion",
 		},
 		{
 			id: 85,
-			name: "Chaos",
+			name: "Evil Eye",
 		},
 		{
 			id: 86,
-			name: "Chemicritter",
+			name: "Evil Hero",
 		},
         {
 			id: 87,
-			name: "Chronomaly",
+			name: "Evilswarm",
 		},
         {
 			id: 88,
-			name: "Chrysalis",
+			name: "Evoltile",
 		},
         {
 			id: 89,
-			name: "Butterspy",
+			name: "Exosister ",
 		},
 		{
 			id: 90,
-			name: "Bystial",
+			name: "Fabled",
 		},
 		{
 			id: 91,
-			name: "Chaos",
+			name: "Face Cards",
 		},
 		{
 			id: 92,
-			name: "Chemicritter",
+			name: "F.A.",
 		},
         {
 			id: 93,
-			name: "Chronomaly",
+			name: "Fairy Tail",
 		},
         {
 			id: 94,
-			name: "Chrysalis",
+			name: "Familiar-Possessed",
 		},
         {
 			id: 95,
-			name: "Butterspy",
+			name: "Brotherhood of the Fire Fist",
 		},
 		{
 			id: 96,
-			name: "Bystial",
+			name: "Fire King",
 		},
 		{
 			id: 97,
-			name: "Chaos",
+			name: "Flamvell",
 		},
 		{
 			id: 98,
-			name: "Chemicritter",
+			name: "Fleur",
 		},
         {
 			id: 99,
-			name: "Chronomaly",
+			name: "Floowandereeze",
 		},
         {
 			id: 100,
-			name: "Chrysalis",
+			name: "Flower Cardian",
 		},
         {
 			id: 101,
-			name: "Butterspy",
+			name: "Fluffal",
 		},
 		{
 			id: 102,
-			name: "Bystial",
+			name: "Fortune Fairy",
 		},
 		{
 			id: 103,
-			name: "Chaos",
+			name: "Fortune Lady",
 		},
 		{
 			id: 104,
-			name: "Chemicritter",
+			name: "Fossil Fusion",
 		},
         {
 			id: 105,
-			name: "Chronomaly",
+			name: "Frightfur",
 		},
         {
 			id: 106,
-			name: "Chrysalis",
+			name: "Frog",
 		},
         {
 			id: 107,
-			name: "Butterspy",
+			name: "Fur Hire",
 		},
 		{
 			id: 108,
-			name: "Bystial",
+			name: "G Golem",
 		},
 		{
 			id: 109,
-			name: "Chaos",
+			name: "Gadget",
 		},
 		{
 			id: 110,
-			name: "Chemicritter",
+			name: "Gagaga",
 		},
         {
 			id: 111,
-			name: "Chronomaly",
+			name: "Gaia",
 		},
         {
 			id: 112,
-			name: "Chrysalis",
+			name: "Galaxy",
 		},
         {
 			id: 113,
-			name: "Butterspy",
+			name: "Ganbara",
 		},
 		{
 			id: 114,
-			name: "Bystial",
+			name: "Geargia",
 		},
 		{
 			id: 115,
-			name: "Chaos",
+			name: "Gem-",
 		},
 		{
 			id: 116,
-			name: "Chemicritter",
+			name: "Generaider",
 		},
         {
 			id: 117,
-			name: "Chronomaly",
+			name: "Genex",
 		},
         {
 			id: 118,
-			name: "Chrysalis",
+			name: "Ghostrick",
 		},
         {
 			id: 119,
-			name: "Butterspy",
+			name: "Ghoti",
 		},
 		{
 			id: 120,
-			name: "Bystial",
+			name: "Gimmick Puppet",
 		},
 		{
 			id: 121,
-			name: "Chaos",
+			name: "Gishki",
 		},
 		{
 			id: 122,
-			name: "Chemicritter",
+			name: "Glacial Beast",
 		},
         {
 			id: 123,
-			name: "Chronomaly",
+			name: "Gladiator Beast",
 		},
         {
 			id: 124,
-			name: "Chrysalis",
+			name: "Goblin",
+		},
+		{
+			id: 125,
+			name: "Gogogo",
+		},
+		{
+			id: 126,
+			name: "Gorgonic",
+		},
+		{
+			id: 127,
+			name: "Gouki",
+		},
+        {
+			id: 128,
+			name: "Goyo",
+		},
+        {
+			id: 129,
+			name: "Gravekeeper",
+		},
+        {
+			id: 130,
+			name: "Graydle",
+		},
+		{
+			id: 131,
+			name: "Gunkan",
+		},
+		{
+			id: 132,
+			name: "Gusto",
+		},
+		{
+			id: 133,
+			name: "Harpie",
+		},
+        {
+			id: 134,
+			name: "Hazy Flame",
+		},
+        {
+			id: 135,
+			name: "Heraldic Beast",
+		},
+        {
+			id: 136,
+			name: "Heroic",
+		},
+		{
+			id: 137,
+			name: "Hieratic",
+		},
+		{
+			id: 138,
+			name: "Ice Barrier",
+		},
+		{
+			id: 139,
+			name: "Icejade",
+		},
+        {
+			id: 140,
+			name: "Igknight",
+		},
+        {
+			id: 141,
+			name: "Ignister",
+		},
+		{
+			id: 142,
+			name: "Impcantation",
+		},
+		{
+			id: 143,
+			name: "Infernity",
+		},
+		{
+			id: 144,
+			name: "Infernoid",
+		},
+        {
+			id: 145,
+			name: "Infinitrack",
+		},
+        {
+			id: 146,
+			name: "Invoked",
+		},
+        {
+			id: 147,
+			name: "Inzektor",
+		},
+		{
+			id: 148,
+			name: "Iron Chain",
+		},
+		{
+			id: 149,
+			name: "Junk",
+		},
+		{
+			id: 150,
+			name: "Jurrac",
+		},
+        {
+			id: 151,
+			name: "Kaiju",
+		},
+        {
+			id: 152,
+			name: "Karakuri",
+		},
+        {
+			id: 153,
+			name: "Kashtira",
+		},
+		{
+			id: 154,
+			name: "Knightmare",
+		},
+		{
+			id: 155,
+			name: "Koa'ki Meiru",
+		},
+		{
+			id: 156,
+			name: "Kozmo",
+		},
+        {
+			id: 157,
+			name: "Krawler",
+		},
+        {
+			id: 158,
+			name: "Kuriboh",
+		},
+		{
+			id: 159,
+			name: "Labrynth",
+		},
+		{
+			id: 160,
+			name: "Laval",
+		},
+		{
+			id: 161,
+			name: "Libromancer",
+		},
+        {
+			id: 162,
+			name: "Lightray",
+		},
+        {
+			id: 163,
+			name: "Lightsworn",
+		},
+        {
+			id: 164,
+			name: "Lswarm",
+		},
+		{
+			id: 165,
+			name: "Lunalight",
+		},
+		{
+			id: 166,
+			name: "Lyrilusc",
+		},
+		{
+			id: 167,
+			name: "Machina",
+		},
+        {
+			id: 168,
+			name: "Madolche",
+		},
+        {
+			id: 169,
+			name: "Magical Musket",
+		},
+        {
+			id: 170,
+			name: "Magician",
+		},
+		{
+			id: 171,
+			name: "Magikey",
+		},
+		{
+			id: 172,
+			name: "Magistus",
+		},
+		{
+			id: 173,
+			name: "Majespecter",
+		},
+        {
+			id: 174,
+			name: "Malefic",
+		},
+        {
+			id: 175,
+			name: "Marincess",
+		},
+		{
+			id: 176,
+			name: "Masked HERO",
+		},
+		{
+			id: 177,
+			name: "Mathmech",
+		},
+		{
+			id: 178,
+			name: "Mayakashi",
+		},
+        {
+			id: 179,
+			name: "Mecha Phantom Beast",
+		},
+        {
+			id: 180,
+			name: "Megalith",
+		},
+        {
+			id: 181,
+			name: "Mekk-Knight",
+		},
+		{
+			id: 182,
+			name: "Meklord",
+		},
+		{
+			id: 183,
+			name: "Melffy",
+		},
+		{
+			id: 184,
+			name: "Mermail",
+		},
+        {
+			id: 185,
+			name: "Metalfoes",
+		},
+        {
+			id: 186,
+			name: "Metaphys",
+		},
+        {
+			id: 187,
+			name: "Mist Valley",
+		},
+		{
+			id: 188,
+			name: "Monarch",
+		},
+		{
+			id: 189,
+			name: "Morphtronic",
+		},
+		{
+			id: 190,
+			name: "Mystical Beast",
+		},
+        {
+			id: 191,
+			name: "Mythical Beast",
+		},
+        {
+			id: 192,
+			name: "Myutant",
+		},
+		{
+			id: 193,
+			name: "Naturia",
+		},
+		{
+			id: 194,
+			name: "Nekroz",
+		},
+		{
+			id: 195,
+			name: "Neo-Spacian",
+		},
+        {
+			id: 196,
+			name: "Neos",
+		},
+        {
+			id: 197,
+			name: "Nemeses",
+		},
+        {
+			id: 198,
+			name: "Nephthys",
+		},
+		{
+			id: 199,
+			name: "Nimble",
+		},
+		{
+			id: 200,
+			name: "Ninja",
+		},
+		{
+			id: 201,
+			name: "Noble Knight",
+		},
+        {
+			id: 202,
+			name: "Nordic",
+		},
+        {
+			id: 203,
+			name: "Number",
+		},
+        {
+			id: 204,
+			name: "Numeron",
+		},
+		{
+			id: 205,
+			name: "Odd-Eyes",
+		},
+		{
+			id: 206,
+			name: "Ogdoadic",
+		},
+		{
+			id: 207,
+			name: "Orcust",
+		},
+        {
+			id: 208,
+			name: "Ojama",
+		},
+        {
+			id: 209,
+			name: "P.U.N.K.",
+		},
+		{
+			id: 210,
+			name: "Paleozoic",
+		},
+		{
+			id: 211,
+			name: "Parshath",
+		},
+		{
+			id: 212,
+			name: "Penguin",
+		},
+        {
+			id: 213,
+			name: "Performage",
+		},
+        {
+			id: 214,
+			name: "Performapal",
+		},
+        {
+			id: 215,
+			name: "Phantasm Spiral",
+		},
+		{
+			id: 216,
+			name: "Phantom Beast",
+		},
+		{
+			id: 217,
+			name: "Photon",
+		},
+		{
+			id: 218,
+			name: "Plunder Patroll",
+		},
+        {
+			id: 219,
+			name: "Prank-Kids",
+		},
+        {
+			id: 220,
+			name: "Predaplant",
+		},
+        {
+			id: 221,
+			name: "Prediction Princess",
+		},
+		{
+			id: 222,
+			name: "PSY-Framegear",
+		},
+		{
+			id: 223,
+			name: "Psychic",
+		},
+		{
+			id: 224,
+			name: "Qli",
+		},
+        {
+			id: 225,
+			name: "Raidraptor",
+		},
+        {
+			id: 226,
+			name: "Red-Eyes",
+		},
+		{
+			id: 227,
+			name: "Reptilianne",
+		},
+		{
+			id: 228,
+			name: "Resonator",
+		},
+		{
+			id: 229,
+			name: "Rikka",
+		},
+        {
+			id: 230,
+			name: "Risebell",
+		},
+        {
+			id: 231,
+			name: "Ritual Beast",
+		},
+        {
+			id: 232,
+			name: "Roid",
+		},
+		{
+			id: 233,
+			name: "Rokket",
+		},
+		{
+			id: 234,
+			name: "Rose",
+		},
+		{
+			id: 235,
+			name: "Runick",
+		},
+        {
+			id: 236,
+			name: "S-Force",
+		},
+        {
+			id: 237,
+			name: "Salamangreat",
+		},
+        {
+			id: 238,
+			name: "Scareclaw",
+		},
+		{
+			id: 239,
+			name: "Scrap",
+		},
+		{
+			id: 240,
+			name: "Shaddoll",
+		},
+		{
+			id: 241,
+			name: "Shark",
+		},
+        {
+			id: 242,
+			name: "Shinobird",
+		},
+        {
+			id: 243,
+			name: "Simorgh",
+		},
+		{
+			id: 244,
+			name: "Shiranui",
+		},
+		{
+			id: 245,
+			name: "Silent Magician",
+		},
+		{
+			id: 246,
+			name: "Silent Swordsman",
+		},
+        {
+			id: 247,
+			name: "Six Samurai",
+		},
+        {
+			id: 248,
+			name: "Skull Servant",
+		},
+        {
+			id: 249,
+			name: "Sky Striker",
+		},
+		{
+			id: 250,
+			name: "Solfachord",
+		},
+		{
+			id: 254,
+			name: "Speedroid",
+		},
+		{
+			id: 252,
+			name: "Spellbook",
+		},
+        {
+			id: 253,
+			name: "Springan",
+		},
+        {
+			id: 254,
+			name: "Spyral",
+		},
+        {
+			id: 255,
+			name: "Spellcaster",
+		},
+		{
+			id: 256,
+			name: "Star Sereph",
+		},
+		{
+			id: 257,
+			name: "Starry Knight",
+		},
+		{
+			id: 258,
+			name: "Steelswarm",
+		},
+        {
+			id: 259,
+			name: "Subterror",
+		},
+        {
+			id: 260,
+			name: "Sunavalon",
+		},
+		{
+			id: 261,
+			name: "Superheavy Samurai",
+		},
+		{
+			id: 262,
+			name: "Supreme King",
+		},
+		{
+			id: 263,
+			name: "Swordsoul",
+		},
+        {
+			id: 264,
+			name: "Sylvan",
+		},
+        {
+			id: 265,
+			name: "Symphonic Warrior",
+		},
+        {
+			id: 266,
+			name: "Synchron",
+		},
+		{
+			id: 267,
+			name: "Tearlaments",
+		},
+		{
+			id: 268,
+			name: "Tenyi",
+		},
+		{
+			id: 269,
+			name: "T.G.",
+		},
+        {
+			id: 270,
+			name: "The Agent",
+		},
+        {
+			id: 271,
+			name: "The Phantom Knights",
+		},
+        {
+			id: 272,
+			name: "The Weather",
+		},
+		{
+			id: 273,
+			name: "Therion",
+		},
+		{
+			id: 274,
+			name: "Thunder Dragon",
+		},
+		{
+			id: 275,
+			name: "Time Thief",
+		},
+        {
+			id: 276,
+			name: "Timelord",
+		},
+        {
+			id: 277,
+			name: "Tindangle",
+		},
+		{
+			id: 278,
+			name: "Toon",
+		},
+		{
+			id: 279,
+			name: "Traptrix",
+		},
+		{
+			id: 280,
+			name: "Triamid",
+		},
+        {
+			id: 281,
+			name: "Tri-Brigade",
+		},
+        {
+			id: 282,
+			name: "Trickstar",
+		},
+        {
+			id: 283,
+			name: "True King",
+		},
+		{
+			id: 284,
+			name: "Twilightsworn",
+		},
+		{
+			id: 285,
+			name: "U.A.",
+		},
+		{
+			id: 286,
+			name: "Unchained",
+		},
+        {
+			id: 287,
+			name: "Ursarctic",
+		},
+        {
+			id: 288,
+			name: "Utopia",
+		},
+        {
+			id: 290,
+			name: "Vampire",
+		},
+		{
+			id: 291,
+			name: "Vassal",
+		},
+		{
+			id: 292,
+			name: "Vaylantz",
+		},
+		{
+			id: 293,
+			name: "Vendread",
+		},
+        {
+			id: 294,
+			name: "Venom",
+		},
+        {
+			id: 295,
+			name: "Virtual World",
+		},
+		{
+			id: 296,
+			name: "Vision HERO",
+		},
+		{
+			id: 297,
+			name: "Volcanic",
+		},
+		{
+			id: 298,
+			name: "Vylon",
+		},
+        {
+			id: 299,
+			name: "War Rock",
+		},
+        {
+			id: 300,
+			name: "Watt",
+		},
+        {
+			id: 301,
+			name: "Wind-up",
+		},
+		{
+			id: 302,
+			name: "Windwitch",
+		},
+		{
+			id: 303,
+			name: "Witchcrafter",
+		},
+		{
+			id: 304,
+			name: "Chemicritter",
+		},
+        {
+			id: 305,
+			name: "World Chalice",
+		},
+        {
+			id: 306,
+			name: "World Legacy",
+		},
+        {
+			id: 307,
+			name: "Worm",
+		},
+		{
+			id: 308,
+			name: "Xtra HERO",
+		},
+		{
+			id: 309,
+			name: "X-Saber",
+		},
+		{
+			id: 310,
+			name: "Yang Zing",
+		},
+        {
+			id: 311,
+			name: "Yosenju",
+		},
+        {
+			id: 312,
+			name: "Zefra",
+		},
+		{
+			id: 313,
+			name: "Zombie",
+		},
+		{
+			id: 314,
+			name: "Zoodiac",
+		},
+		{
+			id: 315,
+			name: "Zubaba",
+		},
+		{
+			id: 316,
+			name: "ZW -",
 		},
 	];
 

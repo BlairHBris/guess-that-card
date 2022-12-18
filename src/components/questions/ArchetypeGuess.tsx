@@ -30,7 +30,7 @@ const AttributeGuess = () => {
 			id: 7,
 			name: "Alien",
 		},
-        {
+		{
 			id: 9,
 			name: "Ally of Justice",
 		},
@@ -150,15 +150,15 @@ const AttributeGuess = () => {
 			id: 38,
 			name: "Chemicritter",
 		},
-        {
+		{
 			id: 39,
 			name: "Chronomaly",
 		},
-        {
+		{
 			id: 40,
 			name: "Chrysalis",
 		},
-        {
+		{
 			id: 41,
 			name: "Cipher",
 		},
@@ -174,15 +174,15 @@ const AttributeGuess = () => {
 			id: 44,
 			name: "Constellar",
 		},
-        {
+		{
 			id: 45,
 			name: "Crusadia",
 		},
-        {
+		{
 			id: 46,
 			name: "Crystal Beast",
 		},
-        {
+		{
 			id: 47,
 			name: "Crystron",
 		},
@@ -198,15 +198,15 @@ const AttributeGuess = () => {
 			id: 50,
 			name: "Cyberdark",
 		},
-        {
+		{
 			id: 51,
 			name: "Cyber Dragon",
 		},
-        {
+		{
 			id: 52,
 			name: "D/D/",
 		},
-        {
+		{
 			id: 53,
 			name: "Danger!",
 		},
@@ -222,15 +222,15 @@ const AttributeGuess = () => {
 			id: 56,
 			name: "Dark Scorpion",
 		},
-        {
+		{
 			id: 57,
 			name: "Dark World",
 		},
-        {
+		{
 			id: 58,
 			name: "D.D.",
 		},
-        {
+		{
 			id: 59,
 			name: "Deep Sea",
 		},
@@ -246,15 +246,15 @@ const AttributeGuess = () => {
 			id: 62,
 			name: "Destiny Hero",
 		},
-        {
+		{
 			id: 63,
 			name: "Digital Bug",
 		},
-        {
+		{
 			id: 64,
 			name: "Dinomist",
 		},
-        {
+		{
 			id: 65,
 			name: "Dinomorphia",
 		},
@@ -270,15 +270,15 @@ const AttributeGuess = () => {
 			id: 68,
 			name: "Dogmatika",
 		},
-        {
+		{
 			id: 69,
 			name: "Doodle Beast",
 		},
-        {
+		{
 			id: 70,
 			name: "Dracoslayer",
 		},
-        {
+		{
 			id: 71,
 			name: "Dragon Ruler",
 		},
@@ -294,15 +294,15 @@ const AttributeGuess = () => {
 			id: 74,
 			name: "Dream Mirror",
 		},
-        {
+		{
 			id: 75,
 			name: "Drytron",
 		},
-        {
+		{
 			id: 76,
 			name: "Dual Avatar",
 		},
-        {
+		{
 			id: 77,
 			name: "Duston",
 		},
@@ -318,15 +318,15 @@ const AttributeGuess = () => {
 			id: 80,
 			name: "Edlich",
 		},
-        {
+		{
 			id: 81,
 			name: "Elemental Hero",
 		},
-        {
+		{
 			id: 82,
 			name: "Elementsaber",
 		},
-        {
+		{
 			id: 83,
 			name: "Empowered Warrior",
 		},
@@ -342,15 +342,15 @@ const AttributeGuess = () => {
 			id: 86,
 			name: "Evil Hero",
 		},
-        {
+		{
 			id: 87,
 			name: "Evilswarm",
 		},
-        {
+		{
 			id: 88,
 			name: "Evoltile",
 		},
-        {
+		{
 			id: 89,
 			name: "Exosister ",
 		},
@@ -366,15 +366,15 @@ const AttributeGuess = () => {
 			id: 92,
 			name: "F.A.",
 		},
-        {
+		{
 			id: 93,
 			name: "Fairy Tail",
 		},
-        {
+		{
 			id: 94,
 			name: "Familiar-Possessed",
 		},
-        {
+		{
 			id: 95,
 			name: "Brotherhood of the Fire Fist",
 		},
@@ -390,15 +390,15 @@ const AttributeGuess = () => {
 			id: 98,
 			name: "Fleur",
 		},
-        {
+		{
 			id: 99,
 			name: "Floowandereeze",
 		},
-        {
+		{
 			id: 100,
 			name: "Flower Cardian",
 		},
-        {
+		{
 			id: 101,
 			name: "Fluffal",
 		},
@@ -414,15 +414,15 @@ const AttributeGuess = () => {
 			id: 104,
 			name: "Fossil Fusion",
 		},
-        {
+		{
 			id: 105,
 			name: "Frightfur",
 		},
-        {
+		{
 			id: 106,
 			name: "Frog",
 		},
-        {
+		{
 			id: 107,
 			name: "Fur Hire",
 		},
@@ -438,15 +438,15 @@ const AttributeGuess = () => {
 			id: 110,
 			name: "Gagaga",
 		},
-        {
+		{
 			id: 111,
 			name: "Gaia",
 		},
-        {
+		{
 			id: 112,
 			name: "Galaxy",
 		},
-        {
+		{
 			id: 113,
 			name: "Ganbara",
 		},
@@ -462,15 +462,15 @@ const AttributeGuess = () => {
 			id: 116,
 			name: "Generaider",
 		},
-        {
+		{
 			id: 117,
 			name: "Genex",
 		},
-        {
+		{
 			id: 118,
 			name: "Ghostrick",
 		},
-        {
+		{
 			id: 119,
 			name: "Ghoti",
 		},
@@ -486,11 +486,11 @@ const AttributeGuess = () => {
 			id: 122,
 			name: "Glacial Beast",
 		},
-        {
+		{
 			id: 123,
 			name: "Gladiator Beast",
 		},
-        {
+		{
 			id: 124,
 			name: "Goblin",
 		},
@@ -506,15 +506,15 @@ const AttributeGuess = () => {
 			id: 127,
 			name: "Gouki",
 		},
-        {
+		{
 			id: 128,
 			name: "Goyo",
 		},
-        {
+		{
 			id: 129,
 			name: "Gravekeeper",
 		},
-        {
+		{
 			id: 130,
 			name: "Graydle",
 		},
@@ -530,15 +530,15 @@ const AttributeGuess = () => {
 			id: 133,
 			name: "Harpie",
 		},
-        {
+		{
 			id: 134,
 			name: "Hazy Flame",
 		},
-        {
+		{
 			id: 135,
 			name: "Heraldic Beast",
 		},
-        {
+		{
 			id: 136,
 			name: "Heroic",
 		},
@@ -554,11 +554,11 @@ const AttributeGuess = () => {
 			id: 139,
 			name: "Icejade",
 		},
-        {
+		{
 			id: 140,
 			name: "Igknight",
 		},
-        {
+		{
 			id: 141,
 			name: "Ignister",
 		},
@@ -574,15 +574,15 @@ const AttributeGuess = () => {
 			id: 144,
 			name: "Infernoid",
 		},
-        {
+		{
 			id: 145,
 			name: "Infinitrack",
 		},
-        {
+		{
 			id: 146,
 			name: "Invoked",
 		},
-        {
+		{
 			id: 147,
 			name: "Inzektor",
 		},
@@ -598,15 +598,15 @@ const AttributeGuess = () => {
 			id: 150,
 			name: "Jurrac",
 		},
-        {
+		{
 			id: 151,
 			name: "Kaiju",
 		},
-        {
+		{
 			id: 152,
 			name: "Karakuri",
 		},
-        {
+		{
 			id: 153,
 			name: "Kashtira",
 		},
@@ -622,11 +622,11 @@ const AttributeGuess = () => {
 			id: 156,
 			name: "Kozmo",
 		},
-        {
+		{
 			id: 157,
 			name: "Krawler",
 		},
-        {
+		{
 			id: 158,
 			name: "Kuriboh",
 		},
@@ -642,15 +642,15 @@ const AttributeGuess = () => {
 			id: 161,
 			name: "Libromancer",
 		},
-        {
+		{
 			id: 162,
 			name: "Lightray",
 		},
-        {
+		{
 			id: 163,
 			name: "Lightsworn",
 		},
-        {
+		{
 			id: 164,
 			name: "Lswarm",
 		},
@@ -666,15 +666,15 @@ const AttributeGuess = () => {
 			id: 167,
 			name: "Machina",
 		},
-        {
+		{
 			id: 168,
 			name: "Madolche",
 		},
-        {
+		{
 			id: 169,
 			name: "Magical Musket",
 		},
-        {
+		{
 			id: 170,
 			name: "Magician",
 		},
@@ -690,11 +690,11 @@ const AttributeGuess = () => {
 			id: 173,
 			name: "Majespecter",
 		},
-        {
+		{
 			id: 174,
 			name: "Malefic",
 		},
-        {
+		{
 			id: 175,
 			name: "Marincess",
 		},
@@ -710,15 +710,15 @@ const AttributeGuess = () => {
 			id: 178,
 			name: "Mayakashi",
 		},
-        {
+		{
 			id: 179,
 			name: "Mecha Phantom Beast",
 		},
-        {
+		{
 			id: 180,
 			name: "Megalith",
 		},
-        {
+		{
 			id: 181,
 			name: "Mekk-Knight",
 		},
@@ -734,15 +734,15 @@ const AttributeGuess = () => {
 			id: 184,
 			name: "Mermail",
 		},
-        {
+		{
 			id: 185,
 			name: "Metalfoes",
 		},
-        {
+		{
 			id: 186,
 			name: "Metaphys",
 		},
-        {
+		{
 			id: 187,
 			name: "Mist Valley",
 		},
@@ -758,11 +758,11 @@ const AttributeGuess = () => {
 			id: 190,
 			name: "Mystical Beast",
 		},
-        {
+		{
 			id: 191,
 			name: "Mythical Beast",
 		},
-        {
+		{
 			id: 192,
 			name: "Myutant",
 		},
@@ -778,15 +778,15 @@ const AttributeGuess = () => {
 			id: 195,
 			name: "Neo-Spacian",
 		},
-        {
+		{
 			id: 196,
 			name: "Neos",
 		},
-        {
+		{
 			id: 197,
 			name: "Nemeses",
 		},
-        {
+		{
 			id: 198,
 			name: "Nephthys",
 		},
@@ -802,15 +802,15 @@ const AttributeGuess = () => {
 			id: 201,
 			name: "Noble Knight",
 		},
-        {
+		{
 			id: 202,
 			name: "Nordic",
 		},
-        {
+		{
 			id: 203,
 			name: "Number",
 		},
-        {
+		{
 			id: 204,
 			name: "Numeron",
 		},
@@ -826,11 +826,11 @@ const AttributeGuess = () => {
 			id: 207,
 			name: "Orcust",
 		},
-        {
+		{
 			id: 208,
 			name: "Ojama",
 		},
-        {
+		{
 			id: 209,
 			name: "P.U.N.K.",
 		},
@@ -846,15 +846,15 @@ const AttributeGuess = () => {
 			id: 212,
 			name: "Penguin",
 		},
-        {
+		{
 			id: 213,
 			name: "Performage",
 		},
-        {
+		{
 			id: 214,
 			name: "Performapal",
 		},
-        {
+		{
 			id: 215,
 			name: "Phantasm Spiral",
 		},
@@ -870,15 +870,15 @@ const AttributeGuess = () => {
 			id: 218,
 			name: "Plunder Patroll",
 		},
-        {
+		{
 			id: 219,
 			name: "Prank-Kids",
 		},
-        {
+		{
 			id: 220,
 			name: "Predaplant",
 		},
-        {
+		{
 			id: 221,
 			name: "Prediction Princess",
 		},
@@ -894,11 +894,11 @@ const AttributeGuess = () => {
 			id: 224,
 			name: "Qli",
 		},
-        {
+		{
 			id: 225,
 			name: "Raidraptor",
 		},
-        {
+		{
 			id: 226,
 			name: "Red-Eyes",
 		},
@@ -914,15 +914,15 @@ const AttributeGuess = () => {
 			id: 229,
 			name: "Rikka",
 		},
-        {
+		{
 			id: 230,
 			name: "Risebell",
 		},
-        {
+		{
 			id: 231,
 			name: "Ritual Beast",
 		},
-        {
+		{
 			id: 232,
 			name: "Roid",
 		},
@@ -938,15 +938,15 @@ const AttributeGuess = () => {
 			id: 235,
 			name: "Runick",
 		},
-        {
+		{
 			id: 236,
 			name: "S-Force",
 		},
-        {
+		{
 			id: 237,
 			name: "Salamangreat",
 		},
-        {
+		{
 			id: 238,
 			name: "Scareclaw",
 		},
@@ -962,11 +962,11 @@ const AttributeGuess = () => {
 			id: 241,
 			name: "Shark",
 		},
-        {
+		{
 			id: 242,
 			name: "Shinobird",
 		},
-        {
+		{
 			id: 243,
 			name: "Simorgh",
 		},
@@ -982,15 +982,15 @@ const AttributeGuess = () => {
 			id: 246,
 			name: "Silent Swordsman",
 		},
-        {
+		{
 			id: 247,
 			name: "Six Samurai",
 		},
-        {
+		{
 			id: 248,
 			name: "Skull Servant",
 		},
-        {
+		{
 			id: 249,
 			name: "Sky Striker",
 		},
@@ -999,22 +999,22 @@ const AttributeGuess = () => {
 			name: "Solfachord",
 		},
 		{
-			id: 254,
+			id: 251,
 			name: "Speedroid",
 		},
 		{
 			id: 252,
 			name: "Spellbook",
 		},
-        {
+		{
 			id: 253,
 			name: "Springan",
 		},
-        {
+		{
 			id: 254,
 			name: "SPYRAL",
 		},
-        {
+		{
 			id: 255,
 			name: "Spellcaster",
 		},
@@ -1030,11 +1030,11 @@ const AttributeGuess = () => {
 			id: 258,
 			name: "Steelswarm",
 		},
-        {
+		{
 			id: 259,
 			name: "Subterror",
 		},
-        {
+		{
 			id: 260,
 			name: "Sunavalon",
 		},
@@ -1050,15 +1050,15 @@ const AttributeGuess = () => {
 			id: 263,
 			name: "Swordsoul",
 		},
-        {
+		{
 			id: 264,
 			name: "Sylvan",
 		},
-        {
+		{
 			id: 265,
 			name: "Symphonic Warrior",
 		},
-        {
+		{
 			id: 266,
 			name: "Synchron",
 		},
@@ -1074,15 +1074,15 @@ const AttributeGuess = () => {
 			id: 269,
 			name: "T.G.",
 		},
-        {
+		{
 			id: 270,
 			name: "The Agent",
 		},
-        {
+		{
 			id: 271,
 			name: "The Phantom Knights",
 		},
-        {
+		{
 			id: 272,
 			name: "The Weather",
 		},
@@ -1098,11 +1098,11 @@ const AttributeGuess = () => {
 			id: 275,
 			name: "Time Thief",
 		},
-        {
+		{
 			id: 276,
 			name: "Timelord",
 		},
-        {
+		{
 			id: 277,
 			name: "Tindangle",
 		},
@@ -1118,15 +1118,15 @@ const AttributeGuess = () => {
 			id: 280,
 			name: "Triamid",
 		},
-        {
+		{
 			id: 281,
 			name: "Tri-Brigade",
 		},
-        {
+		{
 			id: 282,
 			name: "Trickstar",
 		},
-        {
+		{
 			id: 283,
 			name: "True King",
 		},
@@ -1142,15 +1142,15 @@ const AttributeGuess = () => {
 			id: 286,
 			name: "Unchained",
 		},
-        {
+		{
 			id: 287,
 			name: "Ursarctic",
 		},
-        {
+		{
 			id: 288,
 			name: "Utopia",
 		},
-        {
+		{
 			id: 290,
 			name: "Vampire",
 		},
@@ -1166,11 +1166,11 @@ const AttributeGuess = () => {
 			id: 293,
 			name: "Vendread",
 		},
-        {
+		{
 			id: 294,
 			name: "Venom",
 		},
-        {
+		{
 			id: 295,
 			name: "Virtual World",
 		},
@@ -1186,15 +1186,15 @@ const AttributeGuess = () => {
 			id: 298,
 			name: "Vylon",
 		},
-        {
+		{
 			id: 299,
 			name: "War Rock",
 		},
-        {
+		{
 			id: 300,
 			name: "Watt",
 		},
-        {
+		{
 			id: 301,
 			name: "Wind-up",
 		},
@@ -1210,15 +1210,15 @@ const AttributeGuess = () => {
 			id: 304,
 			name: "Chemicritter",
 		},
-        {
+		{
 			id: 305,
 			name: "World Chalice",
 		},
-        {
+		{
 			id: 306,
 			name: "World Legacy",
 		},
-        {
+		{
 			id: 307,
 			name: "Worm",
 		},
@@ -1234,11 +1234,11 @@ const AttributeGuess = () => {
 			id: 310,
 			name: "Yang Zing",
 		},
-        {
+		{
 			id: 311,
 			name: "Yosenju",
 		},
-        {
+		{
 			id: 312,
 			name: "Zefra",
 		},
@@ -1264,36 +1264,50 @@ const AttributeGuess = () => {
 
 	const [submittedValue, setSubmittedValue] = useState("");
 
-    const addToQuestionsList = () => {
-        let existing = localStorage.getItem('questionsList')
-        let currentQuestions = existing !== null ? JSON.parse(existing) : []
-        if (card.archetype.includes(submittedValue)) {
-            currentQuestions.push(`This card is a part of the ${submittedValue} archetype`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is a part of the ${submittedValue} archetype`)   
-        } else {
-            currentQuestions.push(`This card is not a part of the ${submittedValue} archetype`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is NOT a part of the ${submittedValue} archetype`)        
-        }
-    }
+	const addToQuestionsList = () => {
+		let existing = localStorage.getItem("questionsList");
+		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
+		if ( card.archetype !== undefined && card.archetype.includes(submittedValue)) {
+			currentQuestions.push(
+				`This card is a part of the ${submittedValue} archetype`
+			);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is a part of the ${submittedValue} archetype`);
+		} else if (card.archetype !== undefined) {
+			currentQuestions.push(
+				`This card is not a part of the ${submittedValue} archetype`
+			);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is NOT a part of the ${submittedValue} archetype`);
+		} else {
+			currentQuestions.push(`This card is not a part of an archetype`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is NOT a part of an archetype`);
+
+		}
+	};
 
 	const qualityLog = (event: any) => {
 		setSubmittedValue(event.target.value);
 	};
 
 	const qualityCheck = (event: any) => {
-		if (card.archetype.includes(submittedValue)) {
-            let existing = localStorage.getItem('createdCard')
-            existing = existing ? JSON.parse(existing) : {}
-            if (existing != null) {
-                existing['archetype'] = `${submittedValue}`
-            }
-            localStorage.setItem('createdCard', JSON.stringify(existing))
-            addToQuestionsList()
-        } else {
-            addToQuestionsList()
-        }
+		console.log(card.archetype)
+		if (card.archetype === undefined) {
+			addToQuestionsList();
+		} else {
+			if (card.archetype.includes(submittedValue)) {
+				let existing = localStorage.getItem("createdCard");
+				existing = existing ? JSON.parse(existing) : {};
+				if (existing != null) {
+					existing["archetype"] = `${submittedValue}`;
+				}
+				localStorage.setItem("createdCard", JSON.stringify(existing));
+				addToQuestionsList();
+			} else {
+				addToQuestionsList();
+			}
+		}
 	};
 
 	return (

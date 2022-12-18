@@ -3,6 +3,7 @@ import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttackGuess from "./questions/AttackGuess";
 import AttributeGuess from "./questions/AttributeGuess";
 import DefenseGuess from "./questions/DefenseGuess";
+import LevelGuess from "./questions/LevelGuess";
 import NameGuess from "./questions/NameGuess";
 import RaceGuess from "./questions/RaceGuess";
 import TypeGuess from "./questions/TypeGuess";
@@ -31,10 +32,14 @@ const QuestionInput = () => {
 		},
 		{
 			id: 6,
-			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Card Level/Rank Value",
 		},
 		{
 			id: 7,
+			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 8,
 			name: "Card 'Race' (Normal Spell/Trap, Aqua)",
 		},
 	];
@@ -81,6 +86,8 @@ const QuestionInput = () => {
 							return <AttributeGuess />;
 						case "Card Defense Value":
 							return <DefenseGuess />;
+						case "Card Level/Rank Value":
+							return <LevelGuess />;
 						case "Card 'Race' (Normal Spell/Trap, Aqua)":
 							return <RaceGuess />;
 						case "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)":

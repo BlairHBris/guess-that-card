@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CardGenerator from "../CardGenerator";
 
 const AttributeGuess = () => {
 	const archetypes = [
@@ -1256,7 +1257,7 @@ const AttributeGuess = () => {
 		},
 		{
 			id: 316,
-			name: "ZW -",
+			name: "Part of an m",
 		},
 	];
 
@@ -1267,7 +1268,10 @@ const AttributeGuess = () => {
 	const addToQuestionsList = () => {
 		let existing = localStorage.getItem("questionsList");
 		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
-		if ( card.archetype !== undefined && card.archetype.includes(submittedValue)) {
+		if (
+			card.archetype !== undefined &&
+			card.archetype.includes(submittedValue)
+		) {
 			currentQuestions.push(
 				`This card is a part of the ${submittedValue} archetype`
 			);
@@ -1279,11 +1283,20 @@ const AttributeGuess = () => {
 			);
 			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
 			alert(`This card is NOT a part of the ${submittedValue} archetype`);
-		} else {
+		} else if (
+			submittedValue === "Part of an Archetype" &&
+			card.archetype !== undefined
+		) {
+			currentQuestions.push(`This card is a part of an archetype`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is a part of an archetype`);
+		} else if (
+			submittedValue === "Part of an Archetype" &&
+			card.archetype === undefined
+		) {
 			currentQuestions.push(`This card is not a part of an archetype`);
 			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
 			alert(`This card is NOT a part of an archetype`);
-
 		}
 	};
 
@@ -1292,7 +1305,7 @@ const AttributeGuess = () => {
 	};
 
 	const qualityCheck = (event: any) => {
-		console.log(card.archetype)
+		console.log(card.archetype);
 		if (card.archetype === undefined) {
 			addToQuestionsList();
 		} else {

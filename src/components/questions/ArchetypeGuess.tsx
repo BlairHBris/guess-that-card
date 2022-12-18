@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CardGenerator from "../CardGenerator";
 
 const AttributeGuess = () => {
 	const archetypes = [
@@ -1305,7 +1304,6 @@ const AttributeGuess = () => {
 	};
 
 	const qualityCheck = (event: any) => {
-		console.log(card.archetype);
 		if (card.archetype === undefined) {
 			addToQuestionsList();
 		} else {

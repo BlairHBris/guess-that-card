@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AttributeGuess = () => {
-	const attributes = [
+	const archetypes = [
 		{
 			id: 1,
 			name: "Albaz",
@@ -1012,7 +1012,7 @@ const AttributeGuess = () => {
 		},
         {
 			id: 254,
-			name: "Spyral",
+			name: "SPYRAL",
 		},
         {
 			id: 255,
@@ -1267,14 +1267,14 @@ const AttributeGuess = () => {
     const addToQuestionsList = () => {
         let existing = localStorage.getItem('questionsList')
         let currentQuestions = existing !== null ? JSON.parse(existing) : []
-        if (card.attribute.includes(submittedValue)) {
-            currentQuestions.push(`This card is ${submittedValue} attribute`)
+        if (card.archetype.includes(submittedValue)) {
+            currentQuestions.push(`This card is a part of the ${submittedValue} archetype`)
             localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is a ${submittedValue} attribute`)   
+			alert(`This card is a part of the ${submittedValue} archetype`)   
         } else {
-            currentQuestions.push(`This card is not ${submittedValue} attribute`)
+            currentQuestions.push(`This card is not a part of the ${submittedValue} archetype`)
             localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is NOT ${submittedValue} attribute`)        
+			alert(`This card is NOT a part of the ${submittedValue} archetype`)        
         }
     }
 
@@ -1283,11 +1283,11 @@ const AttributeGuess = () => {
 	};
 
 	const qualityCheck = (event: any) => {
-		if (card.attribute.includes(submittedValue)) {
+		if (card.archetype.includes(submittedValue)) {
             let existing = localStorage.getItem('createdCard')
             existing = existing ? JSON.parse(existing) : {}
             if (existing != null) {
-                existing['attribute'] = `${submittedValue}`
+                existing['archetype'] = `${submittedValue}`
             }
             localStorage.setItem('createdCard', JSON.stringify(existing))
             addToQuestionsList()
@@ -1305,12 +1305,12 @@ const AttributeGuess = () => {
 				onChange={qualityLog}
 			></input>
 			<datalist id="qualityExamples">
-				{attributes &&
-					attributes.length > 0 &&
-					attributes.map((attribute) => {
+				{archetypes &&
+					archetypes.length > 0 &&
+					archetypes.map((archetype) => {
 						return (
-							<option key={attribute.id} value={attribute.name}>
-								{attribute?.name}
+							<option key={archetype.id} value={archetype.name}>
+								{archetype?.name}
 							</option>
 						);
 					})}

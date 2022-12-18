@@ -38,3 +38,12 @@
 .questions-section {
   padding-top: 2em;
 }
+
+#name, #qualityChoice {
+  margin-right: 10px;
+}
+
+#questionChoice {
+  margin-left: 10px;
+}
+

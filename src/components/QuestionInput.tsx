@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttributeGuess from "./questions/AttributeGuess";
 import NameGuess from "./questions/NameGuess";
 import RaceGuess from "./questions/RaceGuess";
@@ -12,15 +13,19 @@ const QuestionInput = () => {
 		},
 		{
 			id: 2,
-			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Card Archetype (Blue-Eyes, Dark Magician)",
 		},
 		{
 			id: 3,
-			name: "Card 'Race' (Normal Spell/Trap, Aqua)",
+			name: "Card Attribute (Dark, Devine)",
 		},
 		{
 			id: 4,
-			name: "Card Attribute (Dark, Devine)",
+			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 5,
+			name: "Card 'Race' (Normal Spell/Trap, Aqua)",
 		},
 	];
 
@@ -60,8 +65,10 @@ const QuestionInput = () => {
 							return <NameGuess />;
 						case "Card Attribute (Dark, Devine)":
 							return <AttributeGuess />;
+						case "Card Archetype (Blue-Eyes, Dark Magician)":
+							return <ArchetypeGuess />;
 						case "Card 'Race' (Normal Spell/Trap, Aqua)":
-							return <RaceGuess />; 
+							return <RaceGuess />;
 						case "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)":
 							return <TypeGuess />;
 					}

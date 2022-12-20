@@ -23,11 +23,11 @@
   padding-top: 2em;
 }
 
-#name, #qualityChoice {
+#name, #qualityChoice, #qualityChoiceRight {
   margin-right: 10px;
 }
 
-#questionChoice {
+#questionChoice, #qualityChoiceRight {
   margin-left: 10px;
 }
 

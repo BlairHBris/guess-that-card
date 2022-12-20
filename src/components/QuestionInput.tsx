@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttackGuess from "./questions/AttackGuess";
 import AttributeGuess from "./questions/AttributeGuess";
+import CustomGuess from "./questions/CustomGuess";
 import DefenseGuess from "./questions/DefenseGuess";
 import LevelGuess from "./questions/LevelGuess";
 import LinkArrowsGuess from "./questions/LinkArrowsGuess";
@@ -57,6 +58,10 @@ const QuestionInput = () => {
 			id: 11,
 			name: "'Race' (Normal Spell/Trap, Aqua)",
 		},
+		{
+			is: 12,
+			name: "Custom"
+		}
 	];
 
 	const [selectedQuestion, setSelectedQuestion] = useState("");
@@ -113,6 +118,8 @@ const QuestionInput = () => {
 							return <ScaleGuess />;
 						case "Type (Monster, Spell, Trap, Effect Monster, XYZ)":
 							return <TypeGuess />;
+						case "Custom":
+							return <CustomGuess />
 					}
 				})()}
 			</div>

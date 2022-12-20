@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const DefenseGuess = () => {
+const ScaleGuess = () => {
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");
 
 	const [submittedValue, setSubmittedValue] = useState("");
@@ -20,164 +20,162 @@ const DefenseGuess = () => {
 		const fullSearch = mathValue + submittedValue;
 		switch (mathValue) {
 			case "Exists":
-				if (card.def !== undefined) {
-					currentQuestions.push(`This card does have an defense point value`);
+				if (card.scale !== undefined) {
+					currentQuestions.push(`This card does have a scale`);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card does have an defense point value`);
+					alert(`This card does have an link rating`);
 				} else {
-					currentQuestions.push(
-						`This card does not have an defense point value`
-					);
+					currentQuestions.push(`This card does not have a scale`);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card does NOT have an defense point value`);
+					alert(`This card does NOT have a scale`);
 				}
 				break;
 			case "lt":
-				if (card.def < submittedValue) {
+				if (card.scale < submittedValue) {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["def"] = `${fullSearch}`;
+						existing["scale"] = `${fullSearch}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(
-						`This card's defense is less than ${submittedValue}`
+						`This card's scale is less than ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is less than ${submittedValue}`);
+					alert(`This card's scale is less than ${submittedValue}`);
 				} else {
 					currentQuestions.push(
-						`This card's defense is not less than ${submittedValue}`
+						`This card's scale is not less than ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is NOT less than ${submittedValue}`);
+					alert(`This card's scale is NOT less than ${submittedValue}`);
 				}
 				break;
 			case "lte":
-				if (card.def <= submittedValue) {
+				if (card.scale <= submittedValue) {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["def"] = `${fullSearch}`;
+						existing["scale"] = `${fullSearch}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(
-						`This card's defense is less than or equal to ${submittedValue}`
+						`This card's scale is less than or equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
 					alert(
-						`This card's defense is less than or equal to ${submittedValue}`
+						`This card's scale is less than or equal to ${submittedValue}`
 					);
 				} else {
 					currentQuestions.push(
-						`This card's defense is not less than or equal to ${submittedValue}`
+						`This card's scale is not less than or equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
 					alert(
-						`This card's defense is NOT less than or equal to ${submittedValue}`
+						`This card's scale is NOT less than or equal to ${submittedValue}`
 					);
 				}
 				break;
 			case "=":
-				if (card.def === Number(submittedValue)) {
+				if (card.scale === Number(submittedValue)) {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["def"] = `${submittedValue}`;
+						existing["scale"] = `${submittedValue}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(
-						`This card's defense is equal to ${submittedValue}`
+						`This card's scale is equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is equal to ${submittedValue}`);
+					alert(`This card's scale is equal to ${submittedValue}`);
 				} else {
 					currentQuestions.push(
-						`This card's defense is not equal to ${submittedValue}`
+						`This card's scale is not equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is NOT equal to ${submittedValue}`);
+					alert(`This card's scale is NOT equal to ${submittedValue}`);
 				}
 				break;
 			case "gt":
-				if (card.def > submittedValue) {
+				if (card.scale > submittedValue) {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["def"] = `${fullSearch}`;
+						existing["scale"] = `${fullSearch}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(
-						`This card's defense is greater than ${submittedValue}`
+						`This card's scale is greater than ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is greater than ${submittedValue}`);
+					alert(`This card's scale is greater than ${submittedValue}`);
 				} else {
 					currentQuestions.push(
-						`This card's defense is not greater than ${submittedValue}`
+						`This card's scale is not greater than ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card's defense is NOT greater than ${submittedValue}`);
+					alert(`This card's scale is NOT greater than ${submittedValue}`);
 				}
 				break;
 			case "gte":
-				if (card.def >= submittedValue) {
+				if (card.scale >= submittedValue) {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["def"] = `${fullSearch}`;
+						existing["scale"] = `${fullSearch}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(
-						`This card's defense is greater than or equal to ${submittedValue}`
+						`This card's scale is greater than or equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
 					alert(
-						`This card's defense is greater than or equal to ${submittedValue}`
+						`This card's scale is greater than or equal to ${submittedValue}`
 					);
 				} else {
 					currentQuestions.push(
-						`This card's defense is not greater than or equal to ${submittedValue}`
+						`This card's scale is not greater than or equal to ${submittedValue}`
 					);
 					localStorage.setItem(
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
 					alert(
-						`This card's defense is NOT greater than or equal to ${submittedValue}`
+						`This card's scale is NOT greater than or equal to ${submittedValue}`
 					);
 				}
 				break;
@@ -206,4 +204,4 @@ const DefenseGuess = () => {
 	);
 };
 
-export default DefenseGuess;
+export default ScaleGuess;

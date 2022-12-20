@@ -101,7 +101,7 @@ const LevelGuess = () => {
 					let existing = localStorage.getItem("createdCard");
 					existing = existing ? JSON.parse(existing) : {};
 					if (existing != null) {
-						existing["level"] = `${mathValue}`;
+						existing["level"] = `${submittedValue}`;
 					}
 					localStorage.setItem("createdCard", JSON.stringify(existing));
 					currentQuestions.push(

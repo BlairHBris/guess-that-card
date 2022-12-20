@@ -4,8 +4,11 @@ import AttackGuess from "./questions/AttackGuess";
 import AttributeGuess from "./questions/AttributeGuess";
 import DefenseGuess from "./questions/DefenseGuess";
 import LevelGuess from "./questions/LevelGuess";
+import LinkArrowsGuess from "./questions/LinkArrowsGuess";
+import LinkRatingGuess from "./questions/LinkRatingGuess";
 import NameGuess from "./questions/NameGuess";
 import RaceGuess from "./questions/RaceGuess";
+import ScaleGuess from "./questions/ScaleGuess";
 import TypeGuess from "./questions/TypeGuess";
 
 const QuestionInput = () => {
@@ -16,31 +19,43 @@ const QuestionInput = () => {
 		},
 		{
 			id: 2,
-			name: "Card Archetype (Blue-Eyes, Dark Magician)",
+			name: "Archetype (Blue-Eyes, Dark Magician)",
 		},
 		{
 			id: 3,
-			name: "Card Attack Value",
+			name: "Attack Value",
 		},
 		{
 			id: 4,
-			name: "Card Attribute (Dark, Devine)",
+			name: "Attribute (Dark, Devine)",
 		},
 		{
 			id: 5,
-			name: "Card Defense Value",
+			name: "Defense Value",
 		},
 		{
 			id: 6,
-			name: "Card Level/Rank Value",
+			name: "Level/Rank Value",
 		},
 		{
 			id: 7,
-			name: "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Link Arrows",
 		},
 		{
 			id: 8,
-			name: "Card 'Race' (Normal Spell/Trap, Aqua)",
+			name: "Link Rating",
+		},
+		{
+			id: 9,
+			name: "Scale",
+		},
+		{
+			id: 10,
+			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 11,
+			name: "'Race' (Normal Spell/Trap, Aqua)",
 		},
 	];
 
@@ -78,19 +93,25 @@ const QuestionInput = () => {
 					switch (selectedQuestion) {
 						case "Card Name":
 							return <NameGuess />;
-						case "Card Archetype (Blue-Eyes, Dark Magician)":
+						case "Archetype (Blue-Eyes, Dark Magician)":
 							return <ArchetypeGuess />;
-						case "Card Attack Value":
+						case "Attack Value":
 							return <AttackGuess />;
-						case "Card Attribute (Dark, Devine)":
+						case "Attribute (Dark, Devine)":
 							return <AttributeGuess />;
-						case "Card Defense Value":
+						case "Defense Value":
 							return <DefenseGuess />;
-						case "Card Level/Rank Value":
+						case "Level/Rank Value":
 							return <LevelGuess />;
-						case "Card 'Race' (Normal Spell/Trap, Aqua)":
+						case "Link Arrows":
+							return <LinkArrowsGuess />;
+						case "Link Rating":
+							return <LinkRatingGuess />;
+						case "'Race' (Normal Spell/Trap, Aqua)":
 							return <RaceGuess />;
-						case "Card Type (Monster, Spell, Trap, Effect Monster, XYZ)":
+						case "Scale":
+							return <ScaleGuess />;
+						case "Type (Monster, Spell, Trap, Effect Monster, XYZ)":
 							return <TypeGuess />;
 					}
 				})()}

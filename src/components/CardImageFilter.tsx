@@ -1,4 +1,5 @@
 import axios from "axios";
+import { link } from "fs";
 import React, { useState } from "react";
 
 const CardImageFilter = () => {
@@ -46,11 +47,31 @@ const CardImageFilter = () => {
 		}
 	};
 
+    const searchFunction = () => {
+        let i
+        let input = (document.getElementById("myInput") as HTMLInputElement).value.toUpperCase()
+        let location = document.getElementById("filteredCards")
+        let elements = location?.getElementsByTagName('img')
+        for (i = 0; i < elements!.length; i++) {
+            let a = elements![i].alt
+            console.log(a)
+            if (a.toUpperCase().indexOf(input) > -1) {
+                elements![i].style.display = ""
+            } else {
+                elements![i].style.display= "none"
+            }
+        }
+        
+    }
+
 	return (
 		<>
 			<button className="possibleCards" onClick={showPossibleCards}>
 				Show All Potentially Valid Cards
 			</button>
+            <br />
+            <br />
+            <input type="text" id="myInput" onKeyUp={searchFunction} placeholder="Search for card names" />
 			<p id="filteredCards" className="filteredCards"></p>
 		</>
 	);

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { link } from "fs";
 import React, { useState } from "react";
 
 const CardImageFilter = () => {

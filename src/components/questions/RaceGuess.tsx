@@ -136,36 +136,33 @@ const RaceGuess = () => {
 
 	const [submittedValue, setSubmittedValue] = useState("");
 
-    const addToQuestionsList = () => {
-        let existing = localStorage.getItem('questionsList')
-        let currentQuestions = existing !== null ? JSON.parse(existing) : []
-        if (card.race.includes(submittedValue)) {
-            currentQuestions.push(`This card is a ${submittedValue}`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is a ${submittedValue}`)   
-        } else {
-            currentQuestions.push(`This card is not a ${submittedValue}`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is NOT a ${submittedValue}`)        
-        }
-    }
 
 	const qualityLog = (event: any) => {
 		setSubmittedValue(event.target.value);
 	};
 
 	const qualityCheck = (event: any) => {
-		if (card.race.includes(submittedValue)) {
-            let existing = localStorage.getItem('createdCard')
-            existing = existing ? JSON.parse(existing) : {}
-            if (existing != null) {
-                existing['race'] = `${submittedValue}`
-            }
-            localStorage.setItem('createdCard', JSON.stringify(existing))
-            addToQuestionsList()
-        } else {
-            addToQuestionsList()
-        }
+		let existingQuestions = localStorage.getItem("questionsList");
+		let currentQuestions = existingQuestions !== null ? JSON.parse(existingQuestions) : [];
+		let existingCard = localStorage.getItem("createdCard");
+		existingCard = existingCard ? JSON.parse(existingCard) : {};
+		if (submittedValue === card.race) {
+			if (existingCard != null) {
+				existingCard["race"] = `${submittedValue}`;
+			}
+			localStorage.setItem("createdCard", JSON.stringify(existingCard));
+			currentQuestions.push(`This card is a ${submittedValue}`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is a ${submittedValue}`);
+		} else if (submittedValue.includes(card.race)) {
+			currentQuestions.push(`This card's 'race' is one of the following: ${submittedValue}`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card's 'race' is one of the following: ${submittedValue}`);
+		} else {
+			currentQuestions.push(`This card's 'race' is not one of the following: ${submittedValue}`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card's 'race' is NOT one of the following: ${submittedValue}`);
+		}
 	};
 
 	return (

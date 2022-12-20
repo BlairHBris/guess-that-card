@@ -36,36 +36,32 @@ const AttributeGuess = () => {
 
 	const [submittedValue, setSubmittedValue] = useState("");
 
-    const addToQuestionsList = () => {
-        let existing = localStorage.getItem('questionsList')
-        let currentQuestions = existing !== null ? JSON.parse(existing) : []
-        if (card.attribute.includes(submittedValue)) {
-            currentQuestions.push(`This card is ${submittedValue} attribute`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is a ${submittedValue} attribute`)   
-        } else {
-            currentQuestions.push(`This card is not ${submittedValue} attribute`)
-            localStorage.setItem('questionsList', JSON.stringify(currentQuestions)) 
-			alert(`This card is NOT ${submittedValue} attribute`)        
-        }
-    }
-
 	const qualityLog = (event: any) => {
 		setSubmittedValue(event.target.value);
 	};
 
 	const qualityCheck = (event: any) => {
-		if (card.attribute.includes(submittedValue)) {
-            let existing = localStorage.getItem('createdCard')
-            existing = existing ? JSON.parse(existing) : {}
-            if (existing != null) {
-                existing['attribute'] = `${submittedValue}`
-            }
-            localStorage.setItem('createdCard', JSON.stringify(existing))
-            addToQuestionsList()
-        } else {
-            addToQuestionsList()
-        }
+		let existingQuestions = localStorage.getItem("questionsList");
+		let currentQuestions = existingQuestions !== null ? JSON.parse(existingQuestions) : [];
+		let existingCard = localStorage.getItem("createdCard");
+		existingCard = existingCard ? JSON.parse(existingCard) : {};
+		if (submittedValue === card.attribute) {
+			if (existingCard != null) {
+				existingCard["attribute"] = `${submittedValue}`;
+			}
+			localStorage.setItem("createdCard", JSON.stringify(existingCard));
+			currentQuestions.push(`This card is ${submittedValue} attribute`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card is a ${submittedValue} attribute`);
+		} else if (submittedValue.includes(card.attribute)) {
+			currentQuestions.push(`This card's attribute is one of the following: ${submittedValue}`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card's attribute is one of the following: ${submittedValue}`);
+		} else {
+			currentQuestions.push(`This card's attribute is not one of the following: ${submittedValue}`);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(`This card's attribute is NOT one of the following: ${submittedValue}`);
+		}
 	};
 
 	return (

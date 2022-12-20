@@ -36,3 +36,8 @@
   text-align: left;
   margin-bottom: 1em;
 }
+
+.filteredCards > img {
+  max-width: 22%;
+  padding: 5px;
+}

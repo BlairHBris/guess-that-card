@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
 import QuestionInput from "./QuestionInput";
-import QuestionDisplay from "../QuestionDisplay";
+import QuestionDisplay from "./QuestionDisplay";
+import CardImageFilter from "./CardImageFilter";
 
 const CardGenerator = () => {
 	const [data, setData] = useState<any>({ data: [] });
@@ -100,6 +101,7 @@ const CardGenerator = () => {
 					<h3>{data?.name}</h3>
 					<QuestionInput />
 					<QuestionDisplay/>
+					<CardImageFilter/>
 				</>
 			)}
 		</>

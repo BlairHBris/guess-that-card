@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BanlistGuess from "./BanlistGuess";
 import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttackGuess from "./questions/AttackGuess";
 import AttributeGuess from "./questions/AttributeGuess";
@@ -16,50 +17,54 @@ const QuestionInput = () => {
 	const questions = [
 		{
 			id: 1,
-			name: "Card Name",
+			name: "Banlist"
 		},
 		{
 			id: 2,
-			name: "Archetype (Blue-Eyes, Dark Magician)",
+			name: "Card Name",
 		},
 		{
 			id: 3,
-			name: "Attack Value",
+			name: "Archetype (Blue-Eyes, Dark Magician)",
 		},
 		{
 			id: 4,
-			name: "Attribute (Dark, Devine)",
+			name: "Attack Value",
 		},
 		{
 			id: 5,
-			name: "Defense Value",
+			name: "Attribute (Dark, Devine)",
 		},
 		{
 			id: 6,
-			name: "Level/Rank Value",
+			name: "Defense Value",
 		},
 		{
 			id: 7,
-			name: "Link Arrows",
+			name: "Level/Rank Value",
 		},
 		{
 			id: 8,
-			name: "Link Rating",
+			name: "Link Arrows",
 		},
 		{
 			id: 9,
-			name: "Scale",
+			name: "Link Rating",
 		},
 		{
 			id: 10,
-			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Scale",
 		},
 		{
 			id: 11,
+			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 12,
 			name: "'Race' (Normal Spell/Trap, Aqua)",
 		},
 		{
-			is: 12,
+			is: 13,
 			name: "Custom"
 		}
 	];
@@ -96,6 +101,8 @@ const QuestionInput = () => {
 			<div className="questions-section">
 				{(() => {
 					switch (selectedQuestion) {
+						case "Banlist":
+							return <BanlistGuess />
 						case "Card Name":
 							return <NameGuess />;
 						case "Archetype (Blue-Eyes, Dark Magician)":

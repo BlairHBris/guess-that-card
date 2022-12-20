@@ -27,6 +27,7 @@ const CardGenerator = () => {
 
 	const getCard = async () => {
 		localStorage.clear();
+		setErr("")
 		setIsLoading(true);
 		setCardFound(false);
 		try {
@@ -53,6 +54,7 @@ const CardGenerator = () => {
 
 	const getRandomCard = async () => {
 		localStorage.clear();
+		setErr("")
 		setIsLoading(true);
 		setCardFound(false);
 		const randomID = Math.floor(Math.random() * (12456 + 1));
@@ -98,7 +100,6 @@ const CardGenerator = () => {
 			{cardFound && (
 				<>
 					<h2 className="App-header">Your Card has been chosen!</h2>
-					<h3>{data?.name}</h3>
 					<QuestionInput />
 					<QuestionDisplay/>
 					<CardImageFilter/>

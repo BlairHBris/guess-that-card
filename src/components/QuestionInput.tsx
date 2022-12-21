@@ -82,7 +82,7 @@ const QuestionInput = () => {
 
 	return (
 		<>
-			<h3>Ask your questions below! 20 questions.</h3>
+			<h1 className="questionHeader" >Ask your questions below! 20 questions.</h1>
 			<label htmlFor="questionCategory">Question Category:</label>
 			<input
 				list="questionCategoryExamples"

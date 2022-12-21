@@ -1,5 +1,5 @@
 .App {
-  max-width: 60em;
+  max-width: 80em;
   margin: 2em auto;
   overflow: auto;
   min-height: 100vh;
@@ -44,4 +44,8 @@
 
 .giveUp:hover {
   background-color: red;
+}
+
+.questionHeader {
+  margin-top: 2em;
 }

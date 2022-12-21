@@ -12,12 +12,13 @@ import NameGuess from "./questions/NameGuess";
 import RaceGuess from "./questions/RaceGuess";
 import ScaleGuess from "./questions/ScaleGuess";
 import TypeGuess from "./questions/TypeGuess";
+import PrintDateGuess from "./questions/PrintDateGuess";
 
 const QuestionInput = () => {
 	const questions = [
 		{
 			id: 1,
-			name: "Banlist"
+			name: "Banlist",
 		},
 		{
 			id: 2,
@@ -53,20 +54,24 @@ const QuestionInput = () => {
 		},
 		{
 			id: 10,
-			name: "Scale",
+			name: "Print Date (TCG Only)",
 		},
 		{
 			id: 11,
-			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Scale",
 		},
 		{
 			id: 12,
+			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 13,
 			name: "'Race' (Normal Spell/Trap, Aqua)",
 		},
 		{
-			is: 13,
-			name: "Custom"
-		}
+			is: 14,
+			name: "Custom",
+		},
 	];
 
 	const [selectedQuestion, setSelectedQuestion] = useState("");
@@ -102,7 +107,7 @@ const QuestionInput = () => {
 				{(() => {
 					switch (selectedQuestion) {
 						case "Banlist":
-							return <BanlistGuess />
+							return <BanlistGuess />;
 						case "Card Name":
 							return <NameGuess />;
 						case "Archetype (Blue-Eyes, Dark Magician)":
@@ -119,6 +124,8 @@ const QuestionInput = () => {
 							return <LinkArrowsGuess />;
 						case "Link Rating":
 							return <LinkRatingGuess />;
+						case "Print Date (TCG Only)":
+							return <PrintDateGuess />;
 						case "'Race' (Normal Spell/Trap, Aqua)":
 							return <RaceGuess />;
 						case "Scale":
@@ -126,7 +133,7 @@ const QuestionInput = () => {
 						case "Type (Monster, Spell, Trap, Effect Monster, XYZ)":
 							return <TypeGuess />;
 						case "Custom":
-							return <CustomGuess />
+							return <CustomGuess />;
 					}
 				})()}
 			</div>

@@ -6,9 +6,14 @@ const QuestionDisplay = () => {
 		const knownInformation = document.querySelector(".knownInformation");
 		let existing = localStorage.getItem("questionsList");
 		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
-		let div = document.createElement("div");
-		div.innerHTML = currentQuestions[currentQuestions.length-1];
-		knownInformation!.append(div);
+		knownInformation!.innerHTML = ""
+		let ol = document.createElement("ol");
+		currentQuestions.forEach((currentQuestion: string | Node) => {
+			let li = document.createElement("li")
+			li.append(currentQuestion)
+			ol.append(li)
+		});
+		knownInformation!.append(ol);
 	};
 
 	return (

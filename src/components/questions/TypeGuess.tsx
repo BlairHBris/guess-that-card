@@ -137,7 +137,7 @@ const TypeGuess = () => {
 			currentQuestions.push(`This card is a ${submittedValue}`);
 			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
 			alert(`This card is a ${submittedValue}`);
-		} else if (submittedValue.includes(card.type)) {
+		} else if (submittedValue.includes(card.type) || card.type.includes(submittedValue)) {
 			currentQuestions.push(`This card's type is one of the following: ${submittedValue}`);
 			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
 			alert(`This card's type is one of the following: ${submittedValue}`);

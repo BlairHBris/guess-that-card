@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { start } from "repl";
 
 const PrintDateGuess = () => {
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");

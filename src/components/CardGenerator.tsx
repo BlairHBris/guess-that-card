@@ -9,6 +9,7 @@ const CardGenerator = () => {
 	const [data, setData] = useState<any>({ data: [] });
 	const [cardFound, setCardFound] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [giveUp, setGiveUp] = useState(false);
 	const [err, setErr] = useState("");
 	const [submittedCard, setSubmittedCard] = useState("");
 
@@ -80,6 +81,13 @@ const CardGenerator = () => {
 		createQuestionsList()
 	};
 
+	const adjustGiveUp = () => {
+		if (window.confirm("Are you sure you want to give up?")
+		) {
+			setGiveUp(!giveUp)
+		}
+	}
+
 	return (
 		<>
 			{err && <h2>{err}</h2>}
@@ -100,6 +108,10 @@ const CardGenerator = () => {
 			{cardFound && (
 				<>
 					<h2 className="App-header">Your Card has been chosen!</h2>
+					<button className="giveUp" onClick={adjustGiveUp}>Give up and Reveal Card Name?</button>
+					{giveUp && (
+						<h2>{data.name}</h2>
+					)}
 					<QuestionInput />
 					<QuestionDisplay/>
 					<CardImageFilter/>

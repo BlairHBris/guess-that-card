@@ -41,6 +41,7 @@ const CustomGuess = () => {
 				id="qualityChoiceRight"
 				name="qualityChoice"
 				onChange={booleanEvaluation}
+				type="text"
 			></input>
 			<datalist id="qualityExamples">
 				<option value="yes">Yes</option>

@@ -94,16 +94,25 @@ const LinkArrowsGuess = () => {
 		if (card.linkmarkers) {
 			let sortedCard = card.linkmarkers.sort();
 			const intersection = sortedGuess.filter((element: any) =>
-			sortedCard.includes(element)
-		);
-		if (intersection.length !== 0) {
-			currentQuestions.push(
-				`At least one of the following link arrows are on the chosen card ${sortedGuess}`
+				sortedCard.includes(element)
 			);
-			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
-			alert(
-				`At least one of the following link arrows are on the chosen card: ${sortedGuess}`
-			);
+			if (intersection.length !== 0) {
+				currentQuestions.push(
+					`At least one of the following link arrows are on the chosen card ${sortedGuess}`
+				);
+				localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+				alert(
+					`At least one of the following link arrows are on the chosen card: ${sortedGuess}`
+				);
+			} else {
+				currentQuestions.push(
+					`None of the following link arrows are on the chosen card: ${sortedGuess}`
+				);
+				localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+				alert(
+					`None of the following link arrows are on the chosen card: ${sortedGuess}`
+				);
+			}
 		} else {
 			currentQuestions.push(
 				`None of the following link arrows are on the chosen card: ${sortedGuess}`
@@ -112,16 +121,6 @@ const LinkArrowsGuess = () => {
 			alert(
 				`None of the following link arrows are on the chosen card: ${sortedGuess}`
 			);
-		}
-		} else {
-			currentQuestions.push(
-				`None of the following link arrows are on the chosen card: ${sortedGuess}`
-			);
-			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
-			alert(
-				`None of the following link arrows are on the chosen card: ${sortedGuess}`
-			);
-
 		}
 	};
 
@@ -140,15 +139,15 @@ const LinkArrowsGuess = () => {
 									name={linkArrow.name}
 									value={linkArrow.name}
 								/>
-								<span>{linkArrow.name}</span>
+								<span className="checkboxText">{linkArrow.name}</span>
 							</label>
 						);
 					})}
 			</form>
-			<input onClick={allGuess} type="submit" value="Includes" />
-			<br />
-			<br />
-			<input onClick={exactMatch} type="submit" value="Exact Match" />
+			<div className="dualButtons">
+				<input onClick={allGuess} type="submit" value="Includes" />
+				<input onClick={exactMatch} type="submit" value="Exact Match" />
+			</div>
 		</>
 	);
 };

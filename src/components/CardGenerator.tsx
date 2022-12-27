@@ -14,13 +14,13 @@ const CardGenerator = () => {
 	const [submittedCard, setSubmittedCard] = useState("");
 
 	const createBlankCard = () => {
-		localStorage.setItem("createdCard", "{}")
-	}
+		localStorage.setItem("createdCard", "{}");
+	};
 
 	const createQuestionsList = () => {
-		const questionsList: any = []
-		localStorage.setItem("questionsList", JSON.stringify(questionsList))
-	}
+		const questionsList: any = [];
+		localStorage.setItem("questionsList", JSON.stringify(questionsList));
+	};
 
 	const selectedCard = (event: any) => {
 		setSubmittedCard(event.target.value);
@@ -28,7 +28,7 @@ const CardGenerator = () => {
 
 	const getCard = async () => {
 		localStorage.clear();
-		setErr("")
+		setErr("");
 		setIsLoading(true);
 		setCardFound(false);
 		try {
@@ -48,15 +48,15 @@ const CardGenerator = () => {
 		} finally {
 			setIsLoading(false);
 			setCardFound(true);
-			setSubmittedCard("")
+			setSubmittedCard("");
 		}
-		createBlankCard()
-		createQuestionsList()
+		createBlankCard();
+		createQuestionsList();
 	};
 
 	const getRandomCard = async () => {
 		localStorage.clear();
-		setErr("")
+		setErr("");
 		setIsLoading(true);
 		setCardFound(false);
 		const randomID = Math.floor(Math.random() * (12456 + 1));
@@ -78,46 +78,62 @@ const CardGenerator = () => {
 			setIsLoading(false);
 			setCardFound(true);
 		}
-		createBlankCard()
-		createQuestionsList()
+		createBlankCard();
+		createQuestionsList();
 	};
 
 	const adjustGiveUp = () => {
-		if (window.confirm("Are you sure you want to give up?")
-		) {
-			setGiveUp(!giveUp)
+		if (window.confirm("Are you sure you want to give up?")) {
+			setGiveUp(!giveUp);
 		}
-	}
+	};
 
-	let questionsAsked = localStorage.getItem('questionsList')
+	const restart = () => {
+		if (window.confirm("Are you sure you want to restart?")) {
+			setCardFound(!cardFound);
+		}
+	};
+
+	let questionsAsked = localStorage.getItem("questionsList");
 
 	return (
 		<>
 			{err && <h2>{err}</h2>}
 
-			<button onClick={getRandomCard}>Get a Card!</button>
-			<h2>Or select your own!</h2>
-			<input
-				type="text"
-				id="name"
-				name="name"
-				onChange={selectedCard}
-				value={submittedCard}
-			/>
-			<input onClick={getCard} type="submit" value="Set Card" />
+			{!cardFound && (
+				<>
+					<button className="randomCard" onClick={getRandomCard}>
+						Get a Card!
+					</button>
+					<h2>Or select your own!</h2>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						onChange={selectedCard}
+						value={submittedCard}
+					/>
+					<input onClick={getCard} type="submit" value="Set Card" />
+				</>
+			)}
 
-			{isLoading && <h2 className="App-header">Loading...</h2>}
+			{isLoading && <h2 className="App-header">Getting your card...</h2>}
 
 			{cardFound && (
 				<>
 					<h2 className="App-header">Your Card has been chosen!</h2>
-					<button className="giveUp" onClick={adjustGiveUp}>Give up and Reveal Card Name?</button>
-					{giveUp && (
-						<h2>{data.name}</h2>
-					)}
+					<div className="dualButtonsModified">
+						<button className="giveUp" onClick={adjustGiveUp}>
+							Give up and Reveal Card Name?
+						</button>
+						<button className="inputButton" onClick={restart}>
+							Restart the Game?
+						</button>
+					</div>
+					{giveUp && <h2>{data.name}</h2>}
 					<QuestionInput />
-					<QuestionDisplay/>
-					<CardImageFilter/>
+					<QuestionDisplay />
+					<CardImageFilter />
 				</>
 			)}
 		</>

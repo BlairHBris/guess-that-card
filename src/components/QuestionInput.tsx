@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BanlistGuess from "./BanlistGuess";
+import BanlistGuess from "./questions/BanlistGuess";
 import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttackGuess from "./questions/AttackGuess";
 import AttributeGuess from "./questions/AttributeGuess";
@@ -18,23 +18,23 @@ const QuestionInput = () => {
 	const questions = [
 		{
 			id: 1,
-			name: "Banlist",
-		},
-		{
-			id: 2,
-			name: "Card Name",
-		},
-		{
-			id: 3,
 			name: "Archetype (Blue-Eyes, Dark Magician)",
 		},
 		{
-			id: 4,
+			id: 2,
 			name: "Attack Value",
 		},
 		{
-			id: 5,
+			id: 3,
 			name: "Attribute (Dark, Devine)",
+		},
+		{
+			id: 4,
+			name: "Banlist",
+		},
+		{
+			id: 5,
+			name: "Card Name",
 		},
 		{
 			id: 6,
@@ -82,12 +82,15 @@ const QuestionInput = () => {
 
 	return (
 		<>
-			<h1 className="questionHeader" >Ask your questions below! 20 questions.</h1>
+			<h1 className="questionHeader">
+				Ask your questions below! 20 questions.
+			</h1>
 			<label htmlFor="questionCategory">Question Category:</label>
 			<input
 				list="questionCategoryExamples"
 				id="questionChoice"
 				name="questionChoice"
+				type="text"
 				onChange={handleChange}
 			></input>
 			<datalist id="questionCategoryExamples">

@@ -220,7 +220,7 @@ const BanlistGuess = () => {
 
 	return (
 		<>
-			<input list="formats" onChange={listFormat} />
+			<input list="formats" type="text" onChange={listFormat} />
 			<datalist id="formats">
 				<option value="ban_tcg">TCG</option>
 				<option value="ban_ocg">OCG</option>
@@ -231,8 +231,9 @@ const BanlistGuess = () => {
 				id="qualityChoiceRight"
 				name="qualityChoice"
 				onChange={qualityLog}
+				type="text"
 			></input>
-			<datalist id="qualityExamples">
+			<datalist id="qualityExamples"  >
 				<option value="On List">On List</option>
 				<option value="Unlimited">Unlimited</option>
 			</datalist>

@@ -23,7 +23,7 @@
   padding-top: 2em;
 }
 
-#name, #qualityChoice, #qualityChoiceRight {
+#name, #qualityChoiceRight {
   margin-right: 10px;
 }
 
@@ -47,5 +47,73 @@
 }
 
 .questionHeader {
-  margin-top: 2em;
+  margin-top: 1.5em;
+}
+
+.dualButtons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 30%;
+}
+
+.dualButtonsModified {
+  display: flex;
+  justify-content: space-between;
+  max-width: 55%;
+}
+
+input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard {
+  border: none;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 2px;
+  border-radius: 12px;
+}
+
+.randomCard {
+  font-size: 25px;
+  padding: 5px 15px;
+}
+
+.knownQuestions {
+  display: block;
+  margin-top: 3em;
+}
+
+input[type=text], input[type="number"], #qualityChoice {
+  padding: 6px;
+  font-size: 14px;
+  margin: 2px 2px;
+  border-radius: 4px;
+  border: none;
+}
+
+#qualityChoice, input[type="number"] {
+  margin-right: 10px;
+}
+
+input[type=checkbox] {
+  margin-right: 15px;
+  cursor: pointer;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.checkboxText {
+  vertical-align: middle;
+}
+
+.linkArrows {
+  margin-top: -1em;
+  margin-bottom: 2em;
 }

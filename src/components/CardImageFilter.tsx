@@ -3,8 +3,10 @@ import React, { useState } from "react";
 
 const CardImageFilter = () => {
 	const [err, setErr] = useState("");
+	const [show, setShow] = useState(false);
 
 	const showPossibleCards = async () => {
+		setShow(!show);
 		let existing = localStorage.getItem("createdCard");
 		let currentCard = existing !== null ? JSON.parse(existing) : [];
 		let part1 = Object.keys(currentCard);
@@ -67,13 +69,17 @@ const CardImageFilter = () => {
 			</button>
 			<br />
 			<br />
-			<input
-				type="text"
-				id="myInput"
-				onKeyUp={searchFunction}
-				placeholder="Search for card names"
-			/>
-			<p id="filteredCards" className="filteredCards"></p>
+			{show && (
+				<>
+					<input
+						type="text"
+						id="myInput"
+						onKeyUp={searchFunction}
+						placeholder="Search for card names"
+					/>
+					<p id="filteredCards" className="filteredCards"></p>
+				</>
+			)}
 		</>
 	);
 };

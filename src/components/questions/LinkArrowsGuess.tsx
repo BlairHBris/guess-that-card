@@ -53,21 +53,29 @@ const LinkArrowsGuess = () => {
 		let guessed = localStorage.getItem("linkArrows");
 		let submittedArrows = guessed !== null ? JSON.parse(guessed) : [];
 		let sortedGuess = submittedArrows.sort();
-		let sortedCard = card.linkmarkers.sort();
 		let questions = localStorage.getItem("questionsList");
 		let currentQuestions = questions !== null ? JSON.parse(questions) : [];
-		if (JSON.stringify(sortedCard) === JSON.stringify(sortedGuess)) {
-			let existing = localStorage.getItem("createdCard");
-			existing = existing ? JSON.parse(existing) : {};
-			if (existing != null) {
-				existing["linkmarkers"] = `${sortedGuess}`;
+		if (card.linkmarkers) {
+			let sortedCard = card.linkmarkers.sort();
+			if (JSON.stringify(sortedCard) === JSON.stringify(sortedGuess)) {
+				let existing = localStorage.getItem("createdCard");
+				existing = existing ? JSON.parse(existing) : {};
+				if (existing != null) {
+					existing["linkmarkers"] = `${sortedGuess}`;
+				}
+				currentQuestions.push(
+					`This card's link arrows are exactly ${sortedGuess}`
+				);
+				localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+				localStorage.setItem("createdCard", JSON.stringify(existing));
+				alert(`This card's link arrows are exactly ${sortedGuess}`);
+			} else {
+				currentQuestions.push(
+					`This card's link arrows are NOT exactly ${sortedGuess}`
+				);
+				localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+				alert(`This card's link arrows are not exactly ${sortedGuess}`);
 			}
-			currentQuestions.push(
-				`This card's link arrows are exactly ${sortedGuess}`
-			);
-			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
-			localStorage.setItem("createdCard", JSON.stringify(existing));
-			alert(`This card's link arrows are exactly ${sortedGuess}`);
 		} else {
 			currentQuestions.push(
 				`This card's link arrows are NOT exactly ${sortedGuess}`
@@ -81,13 +89,13 @@ const LinkArrowsGuess = () => {
 		let guessed = localStorage.getItem("linkArrows");
 		let submittedArrows = guessed !== null ? JSON.parse(guessed) : [];
 		let sortedGuess = submittedArrows.sort();
-		let sortedCard = card.linkmarkers.sort();
 		let questions = localStorage.getItem("questionsList");
 		let currentQuestions = questions !== null ? JSON.parse(questions) : [];
-		const intersection = sortedGuess.filter((element: any) =>
+		if (card.linkmarkers) {
+			let sortedCard = card.linkmarkers.sort();
+			const intersection = sortedGuess.filter((element: any) =>
 			sortedCard.includes(element)
 		);
-		console.log(intersection);
 		if (intersection.length !== 0) {
 			currentQuestions.push(
 				`At least one of the following link arrows are on the chosen card ${sortedGuess}`
@@ -104,6 +112,16 @@ const LinkArrowsGuess = () => {
 			alert(
 				`None of the following link arrows are on the chosen card: ${sortedGuess}`
 			);
+		}
+		} else {
+			currentQuestions.push(
+				`None of the following link arrows are on the chosen card: ${sortedGuess}`
+			);
+			localStorage.setItem("questionsList", JSON.stringify(currentQuestions));
+			alert(
+				`None of the following link arrows are on the chosen card: ${sortedGuess}`
+			);
+
 		}
 	};
 

@@ -89,6 +89,8 @@ const CardGenerator = () => {
 		}
 	}
 
+	let questionsAsked = localStorage.getItem('questionsList')
+
 	return (
 		<>
 			{err && <h2>{err}</h2>}

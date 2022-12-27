@@ -48,6 +48,7 @@ const CardGenerator = () => {
 		} finally {
 			setIsLoading(false);
 			setCardFound(true);
+			setSubmittedCard("")
 		}
 		createBlankCard()
 		createQuestionsList()

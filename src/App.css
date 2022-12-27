@@ -117,3 +117,13 @@ input[type=checkbox] {
   margin-top: -1em;
   margin-bottom: 2em;
 }
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  font-size: 6px;
+}
+
+a {
+  color: lightblue;
+}

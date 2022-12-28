@@ -13,6 +13,7 @@ import RaceGuess from "./questions/RaceGuess";
 import ScaleGuess from "./questions/ScaleGuess";
 import TypeGuess from "./questions/TypeGuess";
 import PrintDateGuess from "./questions/PrintDateGuess";
+import EffectGuess from "./questions/EffectGuess";
 
 const QuestionInput = () => {
 	const questions = [
@@ -42,34 +43,38 @@ const QuestionInput = () => {
 		},
 		{
 			id: 7,
-			name: "Level/Rank Value",
+			name: "Has Effect (WIP)"
 		},
 		{
 			id: 8,
-			name: "Link Arrows",
+			name: "Level/Rank Value",
 		},
 		{
 			id: 9,
-			name: "Link Rating",
+			name: "Link Arrows",
 		},
 		{
 			id: 10,
-			name: "Print Date (TCG Only)",
+			name: "Link Rating",
 		},
 		{
 			id: 11,
-			name: "Scale",
+			name: "Print Date (TCG Only)",
 		},
 		{
 			id: 12,
-			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+			name: "Scale",
 		},
 		{
 			id: 13,
+			name: "Type (Monster, Spell, Trap, Effect Monster, XYZ)",
+		},
+		{
+			id: 14,
 			name: "'Race' (Normal Spell/Trap, Aqua)",
 		},
 		{
-			is: 14,
+			is: 15,
 			name: "Custom",
 		},
 	];
@@ -121,6 +126,8 @@ const QuestionInput = () => {
 							return <AttributeGuess />;
 						case "Defense Value":
 							return <DefenseGuess />;
+						case "Has Effect":
+							return <EffectGuess />;
 						case "Level/Rank Value":
 							return <LevelGuess />;
 						case "Link Arrows":

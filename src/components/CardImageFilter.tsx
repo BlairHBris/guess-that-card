@@ -3,20 +3,21 @@ import React, { useState } from "react";
 
 const CardImageFilter = () => {
 	const [err, setErr] = useState("");
-	const [show, setShow] = useState(false);
+	const [show, setShow] = useState(false)
 
 	const showPossibleCards = async () => {
-		setShow(!show);
 		let existing = localStorage.getItem("createdCard");
 		let currentCard = existing !== null ? JSON.parse(existing) : [];
 		let part1 = Object.keys(currentCard);
 		let part2 = Object.values(currentCard);
 		let div = document.getElementById("filteredCards");
+		div!.innerHTML = "";
 		let searchString = "";
 		for (let a = 0; a < part1.length; a++) {
 			searchString += part1[a] + "=" + part2[a] + "&";
 		}
 		let formattedString = searchString.replace(/\s/g, "%20");
+		console.log("hi");
 		try {
 			const { data } = await axios.get(
 				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${formattedString}`,
@@ -26,12 +27,14 @@ const CardImageFilter = () => {
 					},
 				}
 			);
+			console.log("hi");
 			let possibleCards = data.data;
 			if (possibleCards.length > 150) {
 				alert(
 					"There are still over 150 cards this could be. Please learn a little more about the card before displaying the possibilities or else the YGO API people will be mad."
 				);
 			} else {
+				setShow(!show)
 				possibleCards.forEach((card: any) => {
 					const image = document.createElement("img");
 					image.src = card.card_images[0].image_url;
@@ -70,16 +73,14 @@ const CardImageFilter = () => {
 			<br />
 			<br />
 			{show && (
-				<>
-					<input
-						type="text"
-						id="myInput"
-						onKeyUp={searchFunction}
-						placeholder="Search for card names"
-					/>
-					<p id="filteredCards" className="filteredCards"></p>
-				</>
+				<input
+					type="text"
+					id="myInput"
+					onKeyUp={searchFunction}
+					placeholder="Search for card names"
+				/>
 			)}
+			<p id="filteredCards" className="filteredCards"></p>
 		</>
 	);
 };

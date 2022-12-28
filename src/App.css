@@ -143,3 +143,13 @@ footer {
 a {
   color: lightblue;
 }
+
+ol {
+  list-style: decimal;
+  margin-left: 1.2em;
+  margin-top: 1em;
+}
+
+ol > li {
+  margin: .5em 0em;
+}

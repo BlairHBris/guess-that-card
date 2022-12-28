@@ -17,7 +17,6 @@ const CardImageFilter = () => {
 			searchString += part1[a] + "=" + part2[a] + "&";
 		}
 		let formattedString = searchString.replace(/\s/g, "%20");
-		console.log("hi");
 		try {
 			const { data } = await axios.get(
 				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${formattedString}`,
@@ -27,7 +26,6 @@ const CardImageFilter = () => {
 					},
 				}
 			);
-			console.log("hi");
 			let possibleCards = data.data;
 			if (possibleCards.length > 150) {
 				alert(

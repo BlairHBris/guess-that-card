@@ -76,7 +76,7 @@ h2 {
   max-width: 25em;
 }
 
-input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard {
+input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard, .name {
   border: none;
   padding: 6px;
   text-align: center;
@@ -85,6 +85,16 @@ input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .ran
   font-size: 16px;
   margin: 2px 2px;
   border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover, .inputButton:hover, .knownQuestions:hover, .possibleCards:hover, .giveUp:hover, .randomCard:hover, .name:hover {
+  background-color: gray;
+}
+
+input[type=submit]:active, .inputButton:active, .knownQuestions:active, .possibleCards:active, .giveUp:active, .randomCard:active, .name:active {
+  background-color: lightgrey;
 }
 
 .randomCard {

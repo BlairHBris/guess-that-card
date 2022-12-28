@@ -17,8 +17,22 @@
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-top: 1em;
 }
 
+h1 {
+  font-size: 2.5em;
+  margin-bottom: .75em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: .85em;
+}
+
+.nameReveal {
+  margin-top: 1em;
+}
 .questions-section {
   padding-top: 2em;
 }
@@ -68,7 +82,7 @@ input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .ran
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   margin: 2px 2px;
   border-radius: 12px;
 }
@@ -76,6 +90,7 @@ input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .ran
 .randomCard {
   font-size: 25px;
   padding: 5px 15px;
+  margin-bottom: 2em;
 }
 
 .knownQuestions {
@@ -85,7 +100,7 @@ input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .ran
 
 input[type=text], input[type="number"], #qualityChoice {
   padding: 6px;
-  font-size: 14px;
+  font-size: 16px;
   margin: 2px 2px;
   border-radius: 4px;
   border: none;
@@ -120,8 +135,9 @@ input[type=checkbox] {
 
 footer {
   position: absolute;
-  bottom: 0px;
-  font-size: 6px;
+  bottom: 0;
+  height: 2.5rem;
+  font-size: 8px;
 }
 
 a {

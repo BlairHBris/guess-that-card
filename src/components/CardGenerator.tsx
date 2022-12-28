@@ -130,12 +130,25 @@ const CardGenerator = () => {
 							Restart the Game?
 						</button>
 					</div>
-					{giveUp && <h2>{data.name}</h2>}
+					{giveUp && <h2 className="nameReveal">{data.name}</h2>}
 					<QuestionInput />
 					<QuestionDisplay />
 					<CardImageFilter />
 				</>
 			)}
+			<footer>
+				<p>Developed by Blair</p>
+				<p>
+					Powered by the{" "}
+					<a href="https://ygoprodeck.com/api-guide/">
+						Yu-Gi-Oh! API from YGOPRODeck.com
+					</a>
+				</p>
+				<a href="https://www.freepik.com/free-vector/neon-purple-lights-background-arrow-style_8152351.htm#query=abstract%20purple&position=2&from_view=search&track=sph">
+					Image by starline
+				</a>{" "}
+				on Freepik
+			</footer>
 		</>
 	);
 };

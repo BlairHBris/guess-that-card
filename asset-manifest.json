@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/guess-that-card/static/css/main.9a755189.css",
-    "main.js": "/guess-that-card/static/js/main.a7773042.js",
+    "main.css": "/guess-that-card/static/css/main.1a8fd4f1.css",
+    "main.js": "/guess-that-card/static/js/main.d9fca611.js",
     "static/js/787.76f00f0f.chunk.js": "/guess-that-card/static/js/787.76f00f0f.chunk.js",
     "static/media/backgroundpurple.jpg": "/guess-that-card/static/media/backgroundpurple.2f3f3868a1e2a188d303.jpg",
     "index.html": "/guess-that-card/index.html",
-    "main.9a755189.css.map": "/guess-that-card/static/css/main.9a755189.css.map",
-    "main.a7773042.js.map": "/guess-that-card/static/js/main.a7773042.js.map",
+    "main.1a8fd4f1.css.map": "/guess-that-card/static/css/main.1a8fd4f1.css.map",
+    "main.d9fca611.js.map": "/guess-that-card/static/js/main.d9fca611.js.map",
     "787.76f00f0f.chunk.js.map": "/guess-that-card/static/js/787.76f00f0f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a755189.css",
-    "static/js/main.a7773042.js"
+    "static/css/main.1a8fd4f1.css",
+    "static/js/main.d9fca611.js"
   ]
 }

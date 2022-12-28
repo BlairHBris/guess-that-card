@@ -67,13 +67,13 @@ h2 {
 .dualButtons {
   display: flex;
   justify-content: space-between;
-  max-width: 30%;
+  max-width: 10em;
 }
 
 .dualButtonsModified {
   display: flex;
   justify-content: space-between;
-  max-width: 55%;
+  max-width: 25em;
 }
 
 input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard {
@@ -136,7 +136,7 @@ input[type=checkbox] {
 footer {
   position: absolute;
   bottom: 0;
-  height: 2.5rem;
+  margin-top: 50em;
   font-size: 8px;
 }
 

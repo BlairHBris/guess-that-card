@@ -114,6 +114,19 @@ const CardGenerator = () => {
 						value={submittedCard}
 					/>
 					<input onClick={getCard} type="submit" value="Set Card" />
+					<footer>
+						<p>Developed by Blair</p>
+						<p>
+							Powered by the{" "}
+							<a href="https://ygoprodeck.com/api-guide/">
+								Yu-Gi-Oh! API from YGOPRODeck.com
+							</a>
+						</p>
+						<a href="https://www.freepik.com/free-vector/neon-purple-lights-background-arrow-style_8152351.htm#query=abstract%20purple&position=2&from_view=search&track=sph">
+							Image by starline
+						</a>{" "}
+						on Freepik
+					</footer>
 				</>
 			)}
 
@@ -133,22 +146,10 @@ const CardGenerator = () => {
 					{giveUp && <h2 className="nameReveal">{data.name}</h2>}
 					<QuestionInput />
 					<QuestionDisplay />
+					<br />
 					<CardImageFilter />
 				</>
 			)}
-			<footer>
-				<p>Developed by Blair</p>
-				<p>
-					Powered by the{" "}
-					<a href="https://ygoprodeck.com/api-guide/">
-						Yu-Gi-Oh! API from YGOPRODeck.com
-					</a>
-				</p>
-				<a href="https://www.freepik.com/free-vector/neon-purple-lights-background-arrow-style_8152351.htm#query=abstract%20purple&position=2&from_view=search&track=sph">
-					Image by starline
-				</a>{" "}
-				on Freepik
-			</footer>
 		</>
 	);
 };

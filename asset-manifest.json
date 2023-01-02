@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/guess-that-card/static/css/main.43afe847.css",
-    "main.js": "/guess-that-card/static/js/main.8baf83f9.js",
+    "main.js": "/guess-that-card/static/js/main.b6d15d4f.js",
     "static/js/787.76f00f0f.chunk.js": "/guess-that-card/static/js/787.76f00f0f.chunk.js",
     "static/media/backgroundpurple.jpg": "/guess-that-card/static/media/backgroundpurple.2f3f3868a1e2a188d303.jpg",
     "index.html": "/guess-that-card/index.html",
     "main.43afe847.css.map": "/guess-that-card/static/css/main.43afe847.css.map",
-    "main.8baf83f9.js.map": "/guess-that-card/static/js/main.8baf83f9.js.map",
+    "main.b6d15d4f.js.map": "/guess-that-card/static/js/main.b6d15d4f.js.map",
     "787.76f00f0f.chunk.js.map": "/guess-that-card/static/js/787.76f00f0f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43afe847.css",
-    "static/js/main.8baf83f9.js"
+    "static/js/main.b6d15d4f.js"
   ]
 }

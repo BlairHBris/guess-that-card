@@ -17,6 +17,8 @@ const LinkRatingGuess = () => {
 	const qualityCheck = (event: any) => {
 		let existing = localStorage.getItem("questionsList");
 		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
+		let present = localStorage.getItem("createdCard");
+		let currentCard = present !== null ? JSON.parse(present) : {};
 		const fullSearch = mathValue + submittedValue;
 		switch (mathValue) {
 			case "Exists":
@@ -38,12 +40,8 @@ const LinkRatingGuess = () => {
 				break;
 			case "lt":
 				if (card.linkval < submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["linkval"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is less than ${submittedValue}`
 					);
@@ -53,6 +51,8 @@ const LinkRatingGuess = () => {
 					);
 					alert(`This card's link rating is less than ${submittedValue}`);
 				} else {
+					currentCard["linkval"] = `gte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is not less than ${submittedValue}`
 					);
@@ -60,23 +60,13 @@ const LinkRatingGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `gte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's link rating is NOT less than ${submittedValue}`);
 				}
 				break;
 			case "lte":
 				if (card.linkval <= submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["linkval"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is less than or equal to ${submittedValue}`
 					);
@@ -88,6 +78,8 @@ const LinkRatingGuess = () => {
 						`This card's link rating is less than or equal to ${submittedValue}`
 					);
 				} else {
+					currentCard["linkval"] = `gt${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is not less than or equal to ${submittedValue}`
 					);
@@ -95,13 +87,6 @@ const LinkRatingGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `gt${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
-
 					alert(
 						`This card's link rating is NOT less than or equal to ${submittedValue}`
 					);
@@ -109,12 +94,8 @@ const LinkRatingGuess = () => {
 				break;
 			case "=":
 				if (card.linkval === Number(submittedValue)) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["linkval"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is equal to ${submittedValue}`
 					);
@@ -136,12 +117,8 @@ const LinkRatingGuess = () => {
 				break;
 			case "gt":
 				if (card.linkval > submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["linkval"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is greater than ${submittedValue}`
 					);
@@ -151,6 +128,8 @@ const LinkRatingGuess = () => {
 					);
 					alert(`This card's link rating is greater than ${submittedValue}`);
 				} else {
+					currentCard["linkval"] = `lte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is not greater than ${submittedValue}`
 					);
@@ -158,23 +137,15 @@ const LinkRatingGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `lte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
-					alert(`This card's link rating is NOT greater than ${submittedValue}`);
+					alert(
+						`This card's link rating is NOT greater than ${submittedValue}`
+					);
 				}
 				break;
 			case "gte":
 				if (card.linkval >= submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["linkval"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is greater than or equal to ${submittedValue}`
 					);
@@ -186,6 +157,8 @@ const LinkRatingGuess = () => {
 						`This card's link rating is greater than or equal to ${submittedValue}`
 					);
 				} else {
+					currentCard["linkval"] = `lt${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's link rating is not greater than or equal to ${submittedValue}`
 					);
@@ -193,12 +166,6 @@ const LinkRatingGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["linkval"] = `lt${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's link rating is NOT greater than or equal to ${submittedValue}`
 					);

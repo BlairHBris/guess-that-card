@@ -17,6 +17,8 @@ const AttackGuess = () => {
 	const qualityCheck = (event: any) => {
 		let existing = localStorage.getItem("questionsList");
 		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
+		let present = localStorage.getItem("createdCard");
+		let currentCard = present !== null ? JSON.parse(present) : {};
 		const fullSearch = mathValue + submittedValue;
 		switch (mathValue) {
             case "Exists":
@@ -42,12 +44,8 @@ const AttackGuess = () => {
                 break
 			case "lt":
 				if (card.atk < submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["atk"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is less than ${submittedValue}`
 					);
@@ -57,6 +55,8 @@ const AttackGuess = () => {
 					);
 					alert(`This card's attack is less than ${submittedValue}`);
 				} else {
+					currentCard["atk"] = `gte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is not less than ${submittedValue}`
 					);
@@ -64,23 +64,13 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `gte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's attack is NOT less than ${submittedValue}`);
 				}
 				break;
 			case "lte":
 				if (card.atk <= submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["atk"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is less than or equal to ${submittedValue}`
 					);
@@ -90,6 +80,8 @@ const AttackGuess = () => {
 					);
 					alert(`This card's attack is less than or equal to ${submittedValue}`);
 				} else {
+					currentCard["atk"] = `gt${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is not less than or equal to ${submittedValue}`
 					);
@@ -97,12 +89,6 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `gt${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's attack is NOT less than or equal to ${submittedValue}`
 					);
@@ -110,12 +96,8 @@ const AttackGuess = () => {
 				break;
 			case "=":
 				if (card.atk === Number(submittedValue)) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["atk"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is equal to ${submittedValue}`
 					);
@@ -137,12 +119,8 @@ const AttackGuess = () => {
 				break;
 			case "gt":
 				if (card.atk > submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["atk"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is greater than ${submittedValue}`
 					);
@@ -152,6 +130,8 @@ const AttackGuess = () => {
 					);
 					alert(`This card's attack is greater than ${submittedValue}`);
 				} else {
+					currentCard["atk"] = `lte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's attack is not greater than ${submittedValue}`
 					);
@@ -159,24 +139,14 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["atk"] = `lte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's attack is NOT greater than ${submittedValue}`);
 				}
 				break;
                 case "gte":
                     if (card.atk >= submittedValue) {
-                        let existing = localStorage.getItem("createdCard");
-                        existing = existing ? JSON.parse(existing) : {};
-                        if (existing != null) {
-                            existing["atk"] = `${fullSearch}`;
-                        }
-                        localStorage.setItem("createdCard", JSON.stringify(existing));
-                        currentQuestions.push(
+						currentCard["atk"] = `${fullSearch}`;
+						localStorage.setItem("createdCard", JSON.stringify(currentCard));
+							currentQuestions.push(
                             `This card's attack is greater than or equal to ${submittedValue}`
                         );
                         localStorage.setItem(
@@ -185,6 +155,8 @@ const AttackGuess = () => {
                         );
                         alert(`This card's attack is greater than or equal to ${submittedValue}`);
                     } else {
+						currentCard["atk"] = `lt${submittedValue}`;
+						localStorage.setItem("createdCard", JSON.stringify(currentCard));
                         currentQuestions.push(
                             `This card's attack is not greater than or equal to ${submittedValue}`
                         );
@@ -192,12 +164,6 @@ const AttackGuess = () => {
                             "questionsList",
                             JSON.stringify(currentQuestions)
                         );
-						let existing = localStorage.getItem("createdCard");
-						existing = existing ? JSON.parse(existing) : {};
-						if (existing != null) {
-							existing["atk"] = `lt${submittedValue}`;
-						}
-						localStorage.setItem("createdCard", JSON.stringify(existing));
 							alert(`This card's attack is NOT greater than or equal to ${submittedValue}`);
                     }
                     break;

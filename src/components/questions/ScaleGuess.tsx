@@ -17,6 +17,8 @@ const ScaleGuess = () => {
 	const qualityCheck = (event: any) => {
 		let existing = localStorage.getItem("questionsList");
 		let currentQuestions = existing !== null ? JSON.parse(existing) : [];
+		let present = localStorage.getItem("createdCard");
+		let currentCard = present !== null ? JSON.parse(present) : {};
 		const fullSearch = mathValue + submittedValue;
 		switch (mathValue) {
 			case "Exists":
@@ -38,12 +40,8 @@ const ScaleGuess = () => {
 				break;
 			case "lt":
 				if (card.scale < submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["scale"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is less than ${submittedValue}`
 					);
@@ -53,6 +51,8 @@ const ScaleGuess = () => {
 					);
 					alert(`This card's scale is less than ${submittedValue}`);
 				} else {
+					currentCard["scale"] = `gte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is not less than ${submittedValue}`
 					);
@@ -60,23 +60,13 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `gte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's scale is NOT less than ${submittedValue}`);
 				}
 				break;
 			case "lte":
 				if (card.scale <= submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["scale"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is less than or equal to ${submittedValue}`
 					);
@@ -88,6 +78,8 @@ const ScaleGuess = () => {
 						`This card's scale is less than or equal to ${submittedValue}`
 					);
 				} else {
+					currentCard["scale"] = `gt${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is not less than or equal to ${submittedValue}`
 					);
@@ -95,12 +87,6 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `gt${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's scale is NOT less than or equal to ${submittedValue}`
 					);
@@ -108,12 +94,8 @@ const ScaleGuess = () => {
 				break;
 			case "=":
 				if (card.scale === Number(submittedValue)) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["scale"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is equal to ${submittedValue}`
 					);
@@ -135,12 +117,8 @@ const ScaleGuess = () => {
 				break;
 			case "gt":
 				if (card.scale > submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["scale"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is greater than ${submittedValue}`
 					);
@@ -150,6 +128,8 @@ const ScaleGuess = () => {
 					);
 					alert(`This card's scale is greater than ${submittedValue}`);
 				} else {
+					currentCard["scale"] = `lte${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is not greater than ${submittedValue}`
 					);
@@ -157,23 +137,13 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `lte${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's scale is NOT greater than ${submittedValue}`);
 				}
 				break;
 			case "gte":
 				if (card.scale >= submittedValue) {
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `${fullSearch}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
+					currentCard["scale"] = `${fullSearch}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is greater than or equal to ${submittedValue}`
 					);
@@ -185,6 +155,8 @@ const ScaleGuess = () => {
 						`This card's scale is greater than or equal to ${submittedValue}`
 					);
 				} else {
+					currentCard["scale"] = `lt${submittedValue}`;
+					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					currentQuestions.push(
 						`This card's scale is not greater than or equal to ${submittedValue}`
 					);
@@ -192,12 +164,6 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					let existing = localStorage.getItem("createdCard");
-					existing = existing ? JSON.parse(existing) : {};
-					if (existing != null) {
-						existing["scale"] = `lt${submittedValue}`;
-					}
-					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's scale is NOT greater than or equal to ${submittedValue}`
 					);

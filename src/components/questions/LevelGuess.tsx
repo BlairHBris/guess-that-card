@@ -64,6 +64,12 @@ const LevelGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["level"] = `gte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This cards level is NOT less than ${submittedValue}`);
 				}
 				break;
@@ -91,6 +97,12 @@ const LevelGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["level"] = `gte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This cards level is NOT less than or equal to ${submittedValue}`
 					);
@@ -147,6 +159,12 @@ const LevelGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["level"] = `lte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This cards level is NOT greater than ${submittedValue}`);
 				}
 				break;
@@ -174,6 +192,12 @@ const LevelGuess = () => {
                             "questionsList",
                             JSON.stringify(currentQuestions)
                         );
+						let existing = localStorage.getItem("createdCard");
+						existing = existing ? JSON.parse(existing) : {};
+						if (existing != null) {
+							existing["level"] = `lt${submittedValue}`;
+						}
+						localStorage.setItem("createdCard", JSON.stringify(existing));
                         alert(`This cards level is NOT greater than or equal to ${submittedValue}`);
                     }
                     break;

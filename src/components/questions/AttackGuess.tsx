@@ -64,6 +64,12 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["atk"] = `gte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's attack is NOT less than ${submittedValue}`);
 				}
 				break;
@@ -91,6 +97,12 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["atk"] = `gt${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's attack is NOT less than or equal to ${submittedValue}`
 					);
@@ -147,6 +159,12 @@ const AttackGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["atk"] = `lte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's attack is NOT greater than ${submittedValue}`);
 				}
 				break;
@@ -174,7 +192,13 @@ const AttackGuess = () => {
                             "questionsList",
                             JSON.stringify(currentQuestions)
                         );
-                        alert(`This card's attack is NOT greater than or equal to ${submittedValue}`);
+						let existing = localStorage.getItem("createdCard");
+						existing = existing ? JSON.parse(existing) : {};
+						if (existing != null) {
+							existing["atk"] = `lt${submittedValue}`;
+						}
+						localStorage.setItem("createdCard", JSON.stringify(existing));
+							alert(`This card's attack is NOT greater than or equal to ${submittedValue}`);
                     }
                     break;
 		}

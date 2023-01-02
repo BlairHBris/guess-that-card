@@ -26,7 +26,7 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
-					alert(`This card does have an link rating`);
+					alert(`This card does have an scale`);
 				} else {
 					currentQuestions.push(`This card does not have a scale`);
 					localStorage.setItem(
@@ -60,6 +60,12 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["scale"] = `gte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's scale is NOT less than ${submittedValue}`);
 				}
 				break;
@@ -89,6 +95,12 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["scale"] = `gt${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's scale is NOT less than or equal to ${submittedValue}`
 					);
@@ -145,6 +157,12 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["scale"] = `lte${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(`This card's scale is NOT greater than ${submittedValue}`);
 				}
 				break;
@@ -174,6 +192,12 @@ const ScaleGuess = () => {
 						"questionsList",
 						JSON.stringify(currentQuestions)
 					);
+					let existing = localStorage.getItem("createdCard");
+					existing = existing ? JSON.parse(existing) : {};
+					if (existing != null) {
+						existing["scale"] = `lt${submittedValue}`;
+					}
+					localStorage.setItem("createdCard", JSON.stringify(existing));
 					alert(
 						`This card's scale is NOT greater than or equal to ${submittedValue}`
 					);

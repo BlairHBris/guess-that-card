@@ -91,10 +91,9 @@ const CardGenerator = () => {
 	const restart = () => {
 		if (window.confirm("Are you sure you want to restart?")) {
 			setCardFound(!cardFound);
+			setGiveUp(false);
 		}
 	};
-
-	let questionsAsked = localStorage.getItem("questionsList");
 
 	return (
 		<>

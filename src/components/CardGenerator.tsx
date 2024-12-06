@@ -27,51 +27,36 @@ const CardGenerator = () => {
 	};
 
 	const getCard = async () => {
-		localStorage.clear();
-		setErr("");
-		setIsLoading(true);
-		setCardFound(false);
-		try {
-			const { data } = await axios.get(
-				`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${submittedCard}`,
-				{
-					headers: {
-						Accept: "application/json",
-					},
-				}
-			);
-			const chosenCard = data.data[0];
-			localStorage.setItem("card", JSON.stringify(chosenCard));
-			setData(chosenCard);
-		} catch (err: any) {
-			setErr(err.message);
-		} finally {
-			setIsLoading(false);
-			setCardFound(true);
-			setSubmittedCard("");
-		}
-		createBlankCard();
-		createQuestionsList();
-	};
-
-	const getRandomCard = async () => {
-		localStorage.clear();
-		setErr("");
-		setIsLoading(true);
-		setCardFound(false);
 		const randomID = Math.floor(Math.random() * (12456 + 1));
+
+		const { data } = await axios.get(
+			`https://db.ygoprodeck.com/api/v7/cardinfo.php`,
+			{
+				headers: {
+					Accept: "application/json",
+				},
+			}
+		);
+		const chosenCard = data.data[randomID];
+		localStorage.setItem("card", JSON.stringify(chosenCard));
+		const card = JSON.parse(window.localStorage.getItem("card") || "{}");
+		if (!card.type.includes("Monster")) {
+			getCard();
+		}
+		setData(chosenCard);
+	};
+
+	const stage = () => {
+		localStorage.clear();
+		setErr("");
+		setIsLoading(true);
+		setCardFound(false);
+	};
+
+	const setUpCard = () => {
+		stage();
 		try {
-			const { data } = await axios.get(
-				`https://db.ygoprodeck.com/api/v7/cardinfo.php`,
-				{
-					headers: {
-						Accept: "application/json",
-					},
-				}
-			);
-			const chosenCard = data.data[randomID];
-			localStorage.setItem("card", JSON.stringify(chosenCard));
-			setData(chosenCard);
+			getCard();
 		} catch (err: any) {
 			setErr(err.message);
 		} finally {
@@ -82,7 +67,7 @@ const CardGenerator = () => {
 		createQuestionsList();
 	};
 
-	const adjustGiveUp = () => {
+	const forfeit = () => {
 		if (window.confirm("Are you sure you want to give up?")) {
 			setGiveUp(!giveUp);
 		}
@@ -92,6 +77,7 @@ const CardGenerator = () => {
 		if (window.confirm("Are you sure you want to restart?")) {
 			setCardFound(!cardFound);
 			setGiveUp(false);
+			localStorage.clear();
 		}
 	};
 
@@ -101,7 +87,7 @@ const CardGenerator = () => {
 
 			{!cardFound && (
 				<>
-					<button className="randomCard" onClick={getRandomCard}>
+					<button className="randomCard" onClick={setUpCard}>
 						Get a Card!
 					</button>
 					<h2>Or select your own!</h2>
@@ -112,7 +98,7 @@ const CardGenerator = () => {
 						onChange={selectedCard}
 						value={submittedCard}
 					/>
-					<input onClick={getCard} type="submit" value="Set Card" />
+					<input onClick={setUpCard} type="submit" value="Set Card" />
 					<footer>
 						<p>Developed by Blair</p>
 						<p>
@@ -135,7 +121,7 @@ const CardGenerator = () => {
 				<>
 					<h2 className="App-header">Your Card has been chosen!</h2>
 					<div className="dualButtonsModified">
-						<button className="giveUp" onClick={adjustGiveUp}>
+						<button className="giveUp" onClick={forfeit}>
 							Give up and Reveal Card Name?
 						</button>
 						<button className="inputButton" onClick={restart}>

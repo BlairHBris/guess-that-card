@@ -1,6 +1,9 @@
 .App {
-  max-width: 80em;
-  margin: 2em auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 150em;
+  margin: auto, auto;
   overflow: auto;
   min-height: 100vh;
   padding-left: 2em;
@@ -15,70 +18,14 @@
 .App-header {
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: white;
   margin-top: 1em;
 }
 
-h1 {
-  font-size: 2.5em;
-  margin-bottom: .75em;
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: .85em;
-}
-
-.nameReveal {
-  margin-top: 1em;
-}
-.questions-section {
-  padding-top: 2em;
-}
-
-#name, #qualityChoiceRight {
-  margin-right: 10px;
-}
-
-#questionChoice, #qualityChoiceRight {
-  margin-left: 10px;
-}
-
-.container {
-  display: block;
-  text-align: left;
-  margin-bottom: 1em;
-}
-
-.filteredCards > img {
-  max-width: 22%;
-  padding: 5px;
-}
-
-.giveUp:hover {
-  background-color: red;
-}
-
-.questionHeader {
-  margin-top: 1.5em;
-}
-
-.dualButtons {
-  display: flex;
-  justify-content: space-between;
-  max-width: 10em;
-}
-
-.dualButtonsModified {
-  display: flex;
-  justify-content: space-between;
-  max-width: 25em;
-}
-
 input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard, .name {
   border: none;
-  padding: 6px;
+  padding: 6px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -97,18 +44,7 @@ input[type=submit]:active, .inputButton:active, .knownQuestions:active, .possibl
   background-color: lightgrey;
 }
 
-.randomCard {
-  font-size: 25px;
-  padding: 5px 15px;
-  margin-bottom: 2em;
-}
-
-.knownQuestions {
-  display: block;
-  margin-top: 3em;
-}
-
-input[type=text], input[type="number"], #qualityChoice {
+input[type=text] {
   padding: 6px;
   font-size: 16px;
   margin: 2px 2px;
@@ -116,31 +52,65 @@ input[type=text], input[type="number"], #qualityChoice {
   border: none;
 }
 
-#qualityChoice, input[type="number"] {
-  margin-right: 10px;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: .75em;
 }
 
-input[type=checkbox] {
-  margin-right: 15px;
-  cursor: pointer;
-  width: 1.3em;
-  height: 1.3em;
-  background-color: white;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid #ddd;
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
+h2 {
+  font-size: 2em;
+  margin-bottom: .85em;
 }
 
-.checkboxText {
-  vertical-align: middle;
-}
-
-.linkArrows {
-  margin-top: -1em;
+.randomCard {
+  font-size: 25px;
+  padding: 5px 15px;
   margin-bottom: 2em;
+}
+
+.dualButtons {
+  display: flex;
+  justify-content: space-between;
+  min-width: 25em;
+}
+
+.nameReveal {
+  margin-top: 1em;
+}
+
+.cardsGuessedHeader {
+  margin-top: 1.5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  padding: 10px;
+  margin-bottom: 2em;
+}
+
+.grid-item {
+  border: 2px solid white;
+  padding: 20px;
+  text-align: center;
+}
+
+.filled-box {
+  border: 2px solid black;
+}
+
+
+
+
+
+.filteredCards > img {
+  max-width: 22%;
+  padding: 5px;
+}
+
+.knownQuestions {
+  display: block;
+  margin-top: 3em;
 }
 
 footer {
@@ -148,18 +118,4 @@ footer {
   bottom: 0;
   margin-top: 50em;
   font-size: 8px;
-}
-
-a {
-  color: lightblue;
-}
-
-ol {
-  list-style: decimal;
-  margin-left: 1.2em;
-  margin-top: 1em;
-}
-
-ol > li {
-  margin: .5em 0em;
 }

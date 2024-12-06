@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BanlistGuess from "./questions/BanlistGuess";
 import ArchetypeGuess from "./questions/ArchetypeGuess";
 import AttackGuess from "./questions/AttackGuess";
@@ -87,9 +87,9 @@ const QuestionInput = () => {
 
 	return (
 		<>
-			<h1 className="questionHeader">
+			<h2 className="questionHeader">
 				Ask your questions below! 20 questions.
-			</h1>
+			</h2>
 			<label htmlFor="questionCategory">Question Category:</label>
 			<input
 				list="questionCategoryExamples"

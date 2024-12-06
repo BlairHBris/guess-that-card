@@ -29,7 +29,7 @@ const CardImageFilter = () => {
 			let possibleCards = data.data;
 			if (possibleCards.length > 150) {
 				alert(
-					"There are still over 150 cards this could be. Please learn a little more about the card before displaying the possibilities or else the YGO API people will be mad."
+					"There are still over 150 cards this could be. Please learn a little more about the card before displaying the possibilities."
 				);
 			} else {
 				setShow(!show)

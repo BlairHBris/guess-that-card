@@ -6,7 +6,7 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<h1>Guess that Card!</h1>
+				<h1>Yu-Gi-Ordle!</h1>
 			</header>
 			<CardGenerator></CardGenerator>
 		</div>

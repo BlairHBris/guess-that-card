@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import QuestionInput from "./QuestionInput";
-import QuestionDisplay from "./QuestionDisplay";
+import GameBoard from "./GameBoard";
 import CardImageFilter from "./CardImageFilter";
 
 const CardGenerator = () => {
@@ -13,20 +12,16 @@ const CardGenerator = () => {
 	const [err, setErr] = useState("");
 	const [submittedCard, setSubmittedCard] = useState("");
 
-	const createBlankCard = () => {
-		localStorage.setItem("createdCard", "{}");
-	};
-
-	const createQuestionsList = () => {
+	function createQuestionsList() {
 		const questionsList: any = [];
 		localStorage.setItem("questionsList", JSON.stringify(questionsList));
-	};
+	}
 
-	const selectedCard = (event: any) => {
+	function selectedCard(event: any) {
 		setSubmittedCard(event.target.value);
-	};
+	}
 
-	const getCard = async () => {
+	async function getCard() {
 		const randomID = Math.floor(Math.random() * (12456 + 1));
 
 		const { data } = await axios.get(
@@ -44,16 +39,16 @@ const CardGenerator = () => {
 			getCard();
 		}
 		setData(chosenCard);
-	};
+	}
 
-	const stage = () => {
+	function stage() {
 		localStorage.clear();
 		setErr("");
 		setIsLoading(true);
 		setCardFound(false);
-	};
+	}
 
-	const setUpCard = () => {
+	function setUpCard() {
 		stage();
 		try {
 			getCard();
@@ -63,23 +58,22 @@ const CardGenerator = () => {
 			setIsLoading(false);
 			setCardFound(true);
 		}
-		createBlankCard();
 		createQuestionsList();
-	};
+	}
 
-	const forfeit = () => {
+	function forfeit() {
 		if (window.confirm("Are you sure you want to give up?")) {
 			setGiveUp(!giveUp);
 		}
-	};
+	}
 
-	const restart = () => {
+	function restart() {
 		if (window.confirm("Are you sure you want to restart?")) {
 			setCardFound(!cardFound);
 			setGiveUp(false);
 			localStorage.clear();
 		}
-	};
+	}
 
 	return (
 		<>
@@ -119,18 +113,16 @@ const CardGenerator = () => {
 
 			{cardFound && (
 				<>
-					<h2 className="App-header">Your Card has been chosen!</h2>
-					<div className="dualButtonsModified">
+					<div className="dualButtons">
 						<button className="giveUp" onClick={forfeit}>
-							Give up and Reveal Card Name?
+							Give up?
 						</button>
 						<button className="inputButton" onClick={restart}>
-							Restart the Game?
+							Restart?
 						</button>
 					</div>
 					{giveUp && <h2 className="nameReveal">{data.name}</h2>}
-					<QuestionInput />
-					<QuestionDisplay />
+					<GameBoard />
 					<br />
 					<CardImageFilter />
 				</>

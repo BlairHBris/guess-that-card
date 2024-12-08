@@ -81,7 +81,7 @@ const CardGenerator = () => {
 
 			{!cardFound && (
 				<>
-					<button className="randomCard" onClick={setUpCard}>
+					<button className="random-card" onClick={setUpCard}>
 						Get a Card!
 					</button>
 					<h2>Or select your own!</h2>
@@ -92,6 +92,7 @@ const CardGenerator = () => {
 						onChange={selectedCard}
 						value={submittedCard}
 					/>
+					<br />
 					<input onClick={setUpCard} type="submit" value="Set Card" />
 					<footer>
 						<p>Developed by Blair</p>
@@ -113,15 +114,15 @@ const CardGenerator = () => {
 
 			{cardFound && (
 				<>
-					<div className="dualButtons">
-						<button className="giveUp" onClick={forfeit}>
+					<div className="dual-buttons">
+						<button className="give-up" onClick={forfeit}>
 							Give up?
 						</button>
-						<button className="inputButton" onClick={restart}>
+						<button className="input-button" onClick={restart}>
 							Restart?
 						</button>
 					</div>
-					{giveUp && <h2 className="nameReveal">{data.name}</h2>}
+					{giveUp && <h2 className="name-reveal">{data.name}</h2>}
 					<GameBoard />
 					<br />
 					<CardImageFilter />

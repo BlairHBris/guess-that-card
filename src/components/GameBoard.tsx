@@ -35,6 +35,8 @@ const GameBoard = () => {
 			window.localStorage.getItem("submittedCard") || "{}"
 		);
 
+		let card = JSON.parse(window.localStorage.getItem("card") || "{}");
+
 		let board = document.getElementById("table");
 
 		let nameTag = document.createElement("div");
@@ -58,9 +60,44 @@ const GameBoard = () => {
 
 		if (frame) {
 			frame.textContent = submittedCard.frame;
+			if (submittedCard.frameType === card.frameType) {
+				frame.style.backgroundColor = "green";
+			} else {
+				frame.style.backgroundColor = "red";
+			}
 		}
 		if (level) {
 			level.textContent = submittedCard.level || submittedCard.linkval;
+			switch (submittedCard.level) {
+				case undefined:
+					break;
+				default:
+					if (submittedCard.level === card.level) {
+						level.style.backgroundColor = "green";
+					} else if (submittedCard.level > card.level) {
+						level.style.backgroundColor = "yellow";
+						level.textContent += "(>)";
+					} else if (submittedCard.level < card.level) {
+						level.style.backgroundColor = "gold";
+						level.textContent += "(<)";
+					}
+					break;
+			}
+			switch (submittedCard.linkval) {
+				case undefined:
+					break;
+				default:
+					if (submittedCard.linkval === card.linkval) {
+						level.style.backgroundColor = "green";
+					} else if (submittedCard.linkval > card.linkval) {
+						level.style.backgroundColor = "yellow";
+						level.textContent += "(>)";
+					} else if (submittedCard.linkval < card.linkval) {
+						level.style.backgroundColor = "gold";
+						level.textContent += "(<)";
+					}
+					break;
+			}
 		}
 		if (attribute) {
 			attribute.textContent = submittedCard.attribute;
@@ -96,7 +133,7 @@ const GameBoard = () => {
 
 	return (
 		<>
-			<h2 className="cardsGuessedHeader">Cards Guessed</h2>
+			<h2 className="cards-guessed-header">Cards Guessed</h2>
 			<div>
 				{guesses - checkCount === 1 ? (
 					<h3>Final Guess!</h3>

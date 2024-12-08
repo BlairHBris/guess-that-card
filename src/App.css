@@ -23,7 +23,7 @@
   margin-top: 1em;
 }
 
-input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .randomCard, .name {
+input[type=submit], .input-button, .known-questions, .possible-cards, .give-up, .random-card, .name {
   border: none;
   padding: 6px 15px;
   text-align: center;
@@ -36,11 +36,11 @@ input[type=submit], .inputButton, .knownQuestions, .possibleCards, .giveUp, .ran
   cursor: pointer;
 }
 
-input[type=submit]:hover, .inputButton:hover, .knownQuestions:hover, .possibleCards:hover, .giveUp:hover, .randomCard:hover, .name:hover {
+input[type=submit]:hover, .input-button:hover, .known-questions:hover, .possible-cards:hover, .give-up:hover, .random-card:hover, .name:hover {
   background-color: gray;
 }
 
-input[type=submit]:active, .inputButton:active, .knownQuestions:active, .possibleCards:active, .giveUp:active, .randomCard:active, .name:active {
+input[type=submit]:active, .input-button:active, .knoqn-questions:active, .possible-cards:active, .give-up:active, .random-card:active, .name:active {
   background-color: lightgrey;
 }
 
@@ -62,23 +62,23 @@ h2 {
   margin-bottom: .85em;
 }
 
-.randomCard {
+.random-card {
   font-size: 25px;
   padding: 5px 15px;
   margin-bottom: 2em;
 }
 
-.dualButtons {
+.dual-buttons {
   display: flex;
   justify-content: space-between;
   min-width: 25em;
 }
 
-.nameReveal {
+.name-reveal {
   margin-top: 1em;
 }
 
-.cardsGuessedHeader {
+.cards-guessed-header {
   margin-top: 1.5em;
 }
 
@@ -90,7 +90,7 @@ h2 {
 }
 
 .grid-item {
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 20px;
   text-align: center;
 }

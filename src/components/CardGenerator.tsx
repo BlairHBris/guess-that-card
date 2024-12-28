@@ -12,9 +12,9 @@ const CardGenerator = () => {
 	const [err, setErr] = useState("");
 	const [submittedCard, setSubmittedCard] = useState("");
 
-	function createQuestionsList() {
-		const questionsList: any = [];
-		localStorage.setItem("questionsList", JSON.stringify(questionsList));
+	function createCard() {
+		const createdCard: any = {};
+		localStorage.setItem("createdCard", JSON.stringify(createdCard));
 	}
 
 	function selectedCard(event: any) {
@@ -58,7 +58,7 @@ const CardGenerator = () => {
 			setIsLoading(false);
 			setCardFound(true);
 		}
-		createQuestionsList();
+		createCard();
 	}
 
 	function forfeit() {
@@ -113,7 +113,7 @@ const CardGenerator = () => {
 			{isLoading && <h2 className="App-header">Getting your card...</h2>}
 
 			{cardFound && (
-				<>
+				<div className="App">
 					<div className="dual-buttons">
 						<button className="give-up" onClick={forfeit}>
 							Give up?
@@ -126,7 +126,7 @@ const CardGenerator = () => {
 					<GameBoard />
 					<br />
 					<CardImageFilter />
-				</>
+				</div>
 			)}
 		</>
 	);

@@ -100,10 +100,14 @@ h2 {
 }
 
 
+.filtered-cards {
+  padding-top: 4em;
+  margin: auto auto;
+  margin-left: 7em;
+}
 
 
-
-.filteredCards > img {
+.filtered-cards > img {
   max-width: 22%;
   padding: 5px;
 }

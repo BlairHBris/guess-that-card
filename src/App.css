@@ -23,7 +23,7 @@
   margin-top: 1em;
 }
 
-input[type=submit], .input-button, .known-questions, .possible-cards, .give-up, .random-card, .name {
+input[type=submit], .input-button, .known-questions, .possible-cards, .give-up, .random-card {
   border: none;
   padding: 6px 15px;
   text-align: center;
@@ -99,17 +99,23 @@ h2 {
   border: 2px solid black;
 }
 
-
 .filtered-cards {
   padding-top: 4em;
   margin: auto auto;
   margin-left: 7em;
 }
 
-
 .filtered-cards > img {
   max-width: 22%;
-  padding: 5px;
+  padding: 5px; 
+}
+
+.filtered-cards > img:hover {
+  border: thick solid gray;
+}
+
+.filtered-cards > img:active {
+  border: thick solid white;
 }
 
 .knownQuestions {

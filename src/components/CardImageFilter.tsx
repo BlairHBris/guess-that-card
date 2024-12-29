@@ -11,6 +11,7 @@ const CardImageFilter = () => {
 		let part1 = Object.keys(currentCard);
 		let part2 = Object.values(currentCard);
 		let div = document.getElementById("filtered-cards");
+		let enteredName = document.getElementById("name") as HTMLInputElement;
 		div!.innerHTML = "";
 		let searchString = "";
 		for (let a = 0; a < part1.length; a++) {
@@ -37,6 +38,9 @@ const CardImageFilter = () => {
 					const image = document.createElement("img");
 					image.src = card.card_images[0].image_url;
 					image.alt = card.name;
+					image.onclick = function fillName() {
+						enteredName!.value = image.alt;
+					};
 					div!.appendChild(image);
 				});
 			}

@@ -6,6 +6,7 @@ const GameBoard = () => {
 	const [guessedCard, setGuessedCard] = useState("");
 	const [checkCount, setCheckCount] = useState(0);
 	const [adjustCount, setAdjustCount] = useState(0);
+	const [playing, setPlaying] = useState(true);
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");
 
 	let guesses = 6;
@@ -67,7 +68,7 @@ const GameBoard = () => {
 			let defense = document.getElementById(`detail_${checkCount}_5`);
 
 			if (frame) {
-				frame.textContent = submittedCard.frameType;
+				frame.textContent = submittedCard.frameType.toUpperCase();
 				if (submittedCard.frameType === card.frameType) {
 					localStorage.setItem("createdCard", JSON.stringify(currentCard));
 					frame.style.backgroundColor = "green";
@@ -207,10 +208,12 @@ const GameBoard = () => {
 	function checkCard() {
 		makeBoard();
 		setCheckCount(checkCount + 1);
-		if (guessedCard === card.name) {
+		if (guessedCard.toUpperCase() === card.name.toUpperCase()) {
 			alert(`Correct! The card was ${guessedCard}`);
+			setPlaying(false);
 		} else if (checkCount - adjustCount === 5) {
 			alert(`You have run out of guesses, the answer was ${card.name}`);
+			setPlaying(false);
 		}
 	}
 
@@ -218,7 +221,7 @@ const GameBoard = () => {
 		<>
 			<h2 className="cards-guessed-header">Monsters Guessed</h2>
 			<div>
-				{guesses - checkCount === 1 ? (
+				{guesses - checkCount + adjustCount === 1 ? (
 					<h3>Final Guess!</h3>
 				) : (
 					<h3>{guesses - checkCount + adjustCount} Guesses Left</h3>
@@ -233,16 +236,19 @@ const GameBoard = () => {
 				<div className="grid-item">Attack</div>
 				<div className="grid-item">Defense</div>
 			</div>
-			<div>
-				<input
-					type="text"
-					id="name"
-					name="name"
-					onChange={selectedCard}
-					value={guessedCard}
-				/>
-				<input onClick={checkCard} type="submit" value="Check Card" />
-			</div>
+			{playing && (
+				<>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						onChange={selectedCard}
+						value={guessedCard}
+					/>
+					<br />
+					<input onClick={checkCard} type="submit" value="Guess Card" />
+				</>
+			)}
 		</>
 	);
 };

@@ -2,15 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import "../App.css";
 
-const GameBoard = () => {
-	const [guessedCard, setGuessedCard] = useState("");
+const GameBoard = ({ guessedCard, setGuessedCard }) => {
 	const [checkCount, setCheckCount] = useState(0);
 	const [adjustCount, setAdjustCount] = useState(0);
 	const [playing, setPlaying] = useState(true);
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");
-	const perfectCard = JSON.parse(
-		window.localStorage.getItem("perfectCard") || "{}"
-	);
 
 	let guesses = 6;
 
@@ -76,12 +72,8 @@ const GameBoard = () => {
 			if (frame) {
 				frame.textContent = submittedCard.frameType.toUpperCase();
 				if (submittedCard.frameType === card.frameType) {
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
-					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					frame.style.backgroundColor = "green";
-					createdCard["type"] = card.type;
 					perfectCard["type"] = card.type;
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
 					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 				} else {
 					frame.style.backgroundColor = "red";
@@ -95,9 +87,7 @@ const GameBoard = () => {
 						break;
 					default:
 						if (submittedCard.level === card.level) {
-							createdCard["level"] = `${submittedCard.level}`;
 							perfectCard["level"] = `${submittedCard.level}`;
-							localStorage.setItem("createdCard", JSON.stringify(createdCard));
 							localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 							level.style.backgroundColor = "green";
 						} else {
@@ -126,9 +116,7 @@ const GameBoard = () => {
 						break;
 					default:
 						if (submittedCard.linkval === card.linkval) {
-							createdCard["linkval"] = `${submittedCard.linkval}`;
 							perfectCard["linkval"] = `${submittedCard.linkval}`;
-							localStorage.setItem("createdCard", JSON.stringify(createdCard));
 							localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 							level.style.backgroundColor = "green";
 						} else {
@@ -156,9 +144,7 @@ const GameBoard = () => {
 			if (attribute) {
 				attribute.textContent = submittedCard.attribute;
 				if (submittedCard.attribute === card.attribute) {
-					createdCard["attribute"] = `${submittedCard.attribute}`;
 					perfectCard["attribute"] = `${submittedCard.attribute}`;
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
 					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					attribute.style.backgroundColor = "green";
 				} else {
@@ -169,9 +155,7 @@ const GameBoard = () => {
 			if (race) {
 				race.textContent = submittedCard.race;
 				if (submittedCard.race === card.race) {
-					createdCard["race"] = `${submittedCard.race}`;
 					perfectCard["race"] = `${submittedCard.race}`;
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
 					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					race.style.backgroundColor = "green";
 				} else {
@@ -182,9 +166,7 @@ const GameBoard = () => {
 			if (attack) {
 				attack.textContent = submittedCard.atk;
 				if (submittedCard.atk === card.atk) {
-					createdCard["atk"] = `${submittedCard.atk}`;
 					perfectCard["atk"] = `${submittedCard.atk}`;
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
 					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					attack.style.backgroundColor = "green";
 				} else {
@@ -204,9 +186,7 @@ const GameBoard = () => {
 			if (defense) {
 				defense.textContent = submittedCard.def;
 				if (submittedCard.def === card.def) {
-					createdCard["def"] = `${submittedCard.def}`;
 					perfectCard["def"] = `${submittedCard.def}`;
-					localStorage.setItem("createdCard", JSON.stringify(createdCard));
 					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					defense.style.backgroundColor = "green";
 				} else {
@@ -262,7 +242,7 @@ const GameBoard = () => {
 				<>
 					<input
 						type="text"
-						id="name"
+						id="enteredCardName"
 						name="name"
 						onChange={selectedCard}
 						value={guessedCard}

@@ -11,6 +11,7 @@ const CardGenerator = () => {
 	const [giveUp, setGiveUp] = useState(false);
 	const [err, setErr] = useState("");
 	const [submittedCard, setSubmittedCard] = useState("");
+	const [guessedCard, setGuessedCard] = useState("");
 
 	function createCard() {
 		const createdCard: any = {};
@@ -125,9 +126,12 @@ const CardGenerator = () => {
 						</button>
 					</div>
 					{giveUp && <h2 className="name-reveal">{data.name}</h2>}
-					<GameBoard />
+					<GameBoard
+						guessedCard={guessedCard}
+						setGuessedCard={setGuessedCard}
+					/>
 					<br />
-					<CardImageFilter />
+					<CardImageFilter setGuessedCard={setGuessedCard} />
 				</div>
 			)}
 		</>

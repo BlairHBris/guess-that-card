@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const CardImageFilter = () => {
+const CardImageFilter = ({ setGuessedCard }) => {
 	const [err, setErr] = useState("");
 	const [show, setShow] = useState(false);
 
@@ -16,13 +16,14 @@ const CardImageFilter = () => {
 		let part1 = Object.keys(searchCard);
 		let part2 = Object.values(searchCard);
 		let div = document.getElementById("filtered-cards");
-		let enteredName = document.getElementById("name") as HTMLInputElement;
 		div!.innerHTML = "";
 		let searchString = "";
+
 		for (let a = 0; a < part1.length; a++) {
 			searchString += part1[a] + "=" + part2[a] + "&";
 		}
 		let formattedString = searchString.replace(/\s/g, "%20");
+
 		try {
 			const { data } = await axios.get(
 				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${formattedString}`,
@@ -44,7 +45,7 @@ const CardImageFilter = () => {
 					image.src = card.card_images[0].image_url;
 					image.alt = card.name;
 					image.onclick = function fillName() {
-						enteredName!.value = image.alt;
+						setGuessedCard(card.name);
 					};
 					div!.appendChild(image);
 				});

@@ -8,6 +8,9 @@ const GameBoard = () => {
 	const [adjustCount, setAdjustCount] = useState(0);
 	const [playing, setPlaying] = useState(true);
 	const card = JSON.parse(window.localStorage.getItem("card") || "{}");
+	const perfectCard = JSON.parse(
+		window.localStorage.getItem("perfectCard") || "{}"
+	);
 
 	let guesses = 6;
 
@@ -43,8 +46,11 @@ const GameBoard = () => {
 		if (submittedCard.name) {
 			let card = JSON.parse(window.localStorage.getItem("card") || "{}");
 
+			let exists = localStorage.getItem("perfectCard");
+			let perfectCard = exists !== null ? JSON.parse(exists) : {};
+
 			let present = localStorage.getItem("createdCard");
-			let currentCard = present !== null ? JSON.parse(present) : {};
+			let createdCard = present !== null ? JSON.parse(present) : {};
 
 			let board = document.getElementById("table");
 
@@ -70,10 +76,13 @@ const GameBoard = () => {
 			if (frame) {
 				frame.textContent = submittedCard.frameType.toUpperCase();
 				if (submittedCard.frameType === card.frameType) {
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					frame.style.backgroundColor = "green";
-					currentCard["type"] = card.type;
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					createdCard["type"] = card.type;
+					perfectCard["type"] = card.type;
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 				} else {
 					frame.style.backgroundColor = "red";
 				}
@@ -86,22 +95,25 @@ const GameBoard = () => {
 						break;
 					default:
 						if (submittedCard.level === card.level) {
-							currentCard["level"] = `${submittedCard.level}`;
+							createdCard["level"] = `${submittedCard.level}`;
+							perfectCard["level"] = `${submittedCard.level}`;
+							localStorage.setItem("createdCard", JSON.stringify(createdCard));
+							localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 							level.style.backgroundColor = "green";
 						} else {
 							level.style.backgroundColor = "red";
 							if (submittedCard.level > card.level) {
-								currentCard["level"] = `lt${submittedCard.level}`;
+								createdCard["level"] = `lt${submittedCard.level}`;
 								localStorage.setItem(
 									"createdCard",
-									JSON.stringify(currentCard)
+									JSON.stringify(createdCard)
 								);
 								level.textContent += "(>)";
 							} else if (submittedCard.level < card.level) {
-								currentCard["level"] = `gt${submittedCard.level}`;
+								createdCard["level"] = `gt${submittedCard.level}`;
 								localStorage.setItem(
 									"createdCard",
-									JSON.stringify(currentCard)
+									JSON.stringify(createdCard)
 								);
 								level.textContent += "(<)";
 							}
@@ -114,23 +126,25 @@ const GameBoard = () => {
 						break;
 					default:
 						if (submittedCard.linkval === card.linkval) {
-							currentCard["linkval"] = `${submittedCard.linkval}`;
-							localStorage.setItem("createdCard", JSON.stringify(currentCard));
+							createdCard["linkval"] = `${submittedCard.linkval}`;
+							perfectCard["linkval"] = `${submittedCard.linkval}`;
+							localStorage.setItem("createdCard", JSON.stringify(createdCard));
+							localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 							level.style.backgroundColor = "green";
 						} else {
 							level.style.backgroundColor = "red";
 							if (submittedCard.linkval > card.linkval) {
-								currentCard["linkval"] = `lt${submittedCard.linkval}`;
+								createdCard["linkval"] = `lt${submittedCard.linkval}`;
 								localStorage.setItem(
 									"createdCard",
-									JSON.stringify(currentCard)
+									JSON.stringify(createdCard)
 								);
 								level.textContent += "(>)";
 							} else if (submittedCard.linkval < card.linkval) {
-								currentCard["linkval"] = `gt${submittedCard.linkval}`;
+								createdCard["linkval"] = `gt${submittedCard.linkval}`;
 								localStorage.setItem(
 									"createdCard",
-									JSON.stringify(currentCard)
+									JSON.stringify(createdCard)
 								);
 								level.textContent += "(<)";
 							}
@@ -142,8 +156,10 @@ const GameBoard = () => {
 			if (attribute) {
 				attribute.textContent = submittedCard.attribute;
 				if (submittedCard.attribute === card.attribute) {
-					currentCard["attribute"] = `${submittedCard.attribute}`;
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					createdCard["attribute"] = `${submittedCard.attribute}`;
+					perfectCard["attribute"] = `${submittedCard.attribute}`;
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					attribute.style.backgroundColor = "green";
 				} else {
 					attribute.style.backgroundColor = "red";
@@ -153,8 +169,10 @@ const GameBoard = () => {
 			if (race) {
 				race.textContent = submittedCard.race;
 				if (submittedCard.race === card.race) {
-					currentCard["race"] = `${submittedCard.race}`;
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					createdCard["race"] = `${submittedCard.race}`;
+					perfectCard["race"] = `${submittedCard.race}`;
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					race.style.backgroundColor = "green";
 				} else {
 					race.style.backgroundColor = "red";
@@ -164,18 +182,20 @@ const GameBoard = () => {
 			if (attack) {
 				attack.textContent = submittedCard.atk;
 				if (submittedCard.atk === card.atk) {
-					currentCard["atk"] = `${submittedCard.atk}`;
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					createdCard["atk"] = `${submittedCard.atk}`;
+					perfectCard["atk"] = `${submittedCard.atk}`;
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					attack.style.backgroundColor = "green";
 				} else {
 					attack.style.backgroundColor = "red";
 					if (submittedCard.atk > card.atk) {
-						currentCard["atk"] = `lt${submittedCard.atk}`;
-						localStorage.setItem("createdCard", JSON.stringify(currentCard));
+						createdCard["atk"] = `lt${submittedCard.atk}`;
+						localStorage.setItem("createdCard", JSON.stringify(createdCard));
 						attack.textContent += "(>)";
 					} else if (submittedCard.atk < card.atk) {
-						currentCard["atk"] = `gt${submittedCard.atk}`;
-						localStorage.setItem("createdCard", JSON.stringify(currentCard));
+						createdCard["atk"] = `gt${submittedCard.atk}`;
+						localStorage.setItem("createdCard", JSON.stringify(createdCard));
 						attack.textContent += "(<)";
 					}
 				}
@@ -184,18 +204,20 @@ const GameBoard = () => {
 			if (defense) {
 				defense.textContent = submittedCard.def;
 				if (submittedCard.def === card.def) {
-					currentCard["def"] = `${submittedCard.def}`;
-					localStorage.setItem("createdCard", JSON.stringify(currentCard));
+					createdCard["def"] = `${submittedCard.def}`;
+					perfectCard["def"] = `${submittedCard.def}`;
+					localStorage.setItem("createdCard", JSON.stringify(createdCard));
+					localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 					defense.style.backgroundColor = "green";
 				} else {
 					defense.style.backgroundColor = "red";
 					if (submittedCard.def > card.def) {
-						currentCard["def"] = `lt${submittedCard.def}`;
-						localStorage.setItem("createdCard", JSON.stringify(currentCard));
+						createdCard["def"] = `lt${submittedCard.def}`;
+						localStorage.setItem("createdCard", JSON.stringify(createdCard));
 						defense.textContent += "(>)";
 					} else if (submittedCard.def < card.def) {
-						currentCard["def"] = `gt${submittedCard.def}`;
-						localStorage.setItem("createdCard", JSON.stringify(currentCard));
+						createdCard["def"] = `gt${submittedCard.def}`;
+						localStorage.setItem("createdCard", JSON.stringify(createdCard));
 						defense.textContent += "(<)";
 					}
 				}

@@ -7,9 +7,14 @@ const CardImageFilter = () => {
 
 	const showPossibleCards = async () => {
 		let existing = localStorage.getItem("createdCard");
-		let currentCard = existing !== null ? JSON.parse(existing) : [];
-		let part1 = Object.keys(currentCard);
-		let part2 = Object.values(currentCard);
+		let createdCard = existing !== null ? JSON.parse(existing) : [];
+		let present = localStorage.getItem("perfectCard");
+		let perfectCard = present !== null ? JSON.parse(present) : [];
+
+		let searchCard = { ...createdCard, ...perfectCard };
+
+		let part1 = Object.keys(searchCard);
+		let part2 = Object.values(searchCard);
 		let div = document.getElementById("filtered-cards");
 		let enteredName = document.getElementById("name") as HTMLInputElement;
 		div!.innerHTML = "";
@@ -47,7 +52,6 @@ const CardImageFilter = () => {
 		} catch (err: any) {
 			setErr(err.message);
 		}
-		console.log(formattedString);
 	};
 
 	const searchFunction = () => {

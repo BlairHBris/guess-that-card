@@ -14,7 +14,9 @@ const CardGenerator = () => {
 
 	function createCard() {
 		const createdCard: any = {};
+		const perfectCard: any = {};
 		localStorage.setItem("createdCard", JSON.stringify(createdCard));
+		localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
 	}
 
 	function selectedCard(event: any) {

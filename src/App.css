@@ -82,6 +82,10 @@ h2 {
   margin-top: 1.5em;
 }
 
+input:disabled {
+  display: none;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;

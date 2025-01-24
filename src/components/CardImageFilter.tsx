@@ -73,22 +73,29 @@ const CardImageFilter = ({ setGuessedCard }) => {
 	};
 
 	return (
-		<>
-			<button className="possible-cards" onClick={showPossibleCards}>
-				Show All Potentially Valid Cards
-			</button>
-			<br />
-			<br />
-			{show && (
-				<input
-					type="text"
-					id="myInput"
-					onKeyUp={searchFunction}
-					placeholder="Search for card names"
-				/>
-			)}
-			<p id="filtered-cards" className="filtered-cards"></p>
-		</>
+
+			<>
+				{(err === "") && (
+				<>
+					<button className="possible-cards" onClick={showPossibleCards}>
+						Show All Potentially Valid Cards
+					</button>
+					<br />
+					<br />
+					{show && (
+						<input
+							type="text"
+							id="myInput"
+							onKeyUp={searchFunction}
+							placeholder="Search for card names"
+						/>
+					)}
+					<p id="filtered-cards" className="filtered-cards"></p>
+				</>
+				)}
+
+				{err !== "" && <h2>Error Detected. Please refresh.</h2>}
+			</>
 	);
 };
 

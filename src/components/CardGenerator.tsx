@@ -4,37 +4,65 @@ import "../App.css";
 import GameBoard from "./GameBoard";
 import CardImageFilter from "./CardImageFilter";
 
+const createdCard: any = {};
+const perfectCard: any = {};
+const chosenCard: any = {};
+const ygoWinStreak: any = 0;
+
+const localStorageAttributes = [
+	{ name: "createdCard", var: createdCard },
+	{ name: "perfectCard", var: perfectCard },
+	{ name: "card", var: chosenCard },
+	{ name: "ygoWinStreak", var: ygoWinStreak },
+];
+
 const CardGenerator = () => {
 	const [data, setData] = useState<any>({ data: [] });
 	const [cardFound, setCardFound] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [giveUp, setGiveUp] = useState(false);
 	const [err, setErr] = useState("");
-	const [submittedCard, setSubmittedCard] = useState("");
 	const [guessedCard, setGuessedCard] = useState("");
 
-	function createCard() {
-		const createdCard: any = {};
-		const perfectCard: any = {};
-		localStorage.setItem("createdCard", JSON.stringify(createdCard));
-		localStorage.setItem("perfectCard", JSON.stringify(perfectCard));
+	function stage() {
+		localStorage.removeItem("createdCard");
+		setErr("");
+		setIsLoading(true);
+		setCardFound(false);
 	}
 
-	function selectedCard(event: any) {
-		setSubmittedCard(event.target.value);
+	function createCard() {
+		localStorageAttributes.forEach((attr) => {
+			if (localStorage.getItem("ygoWinStreak")?.length === 1) {
+				return;
+			}
+			localStorage.setItem(`${attr.name}`, JSON.stringify(attr.var));
+		});
+	}
+
+	function setUpCard() {
+		stage();
+		try {
+			getCard();
+			setIsLoading(false);
+			setCardFound(true);
+			createCard();
+		} catch (err: any) {
+			alert(err);
+		}
 	}
 
 	async function getCard() {
 		const randomID = Math.floor(Math.random() * (12456 + 1));
+		let searchString = `https://db.ygoprodeck.com/api/v7/cardinfo.php`;
 
-		const { data } = await axios.get(
-			`https://db.ygoprodeck.com/api/v7/cardinfo.php`,
-			{
-				headers: {
-					Accept: "application/json",
-				},
-			}
-		);
+		const { data } = await axios.get(searchString, {
+			headers: {
+				Accept: "application/json",
+			},
+		});
+
+		localStorage.setItem("card", "");
 		const chosenCard = data.data[randomID];
 		localStorage.setItem("card", JSON.stringify(chosenCard));
 		const card = JSON.parse(window.localStorage.getItem("card") || "{}");
@@ -44,24 +72,16 @@ const CardGenerator = () => {
 		setData(chosenCard);
 	}
 
-	function stage() {
-		localStorage.clear();
-		setErr("");
-		setIsLoading(true);
-		setCardFound(false);
-	}
-
-	function setUpCard() {
-		stage();
-		try {
-			getCard();
-		} catch (err: any) {
-			setErr(err.message);
-		} finally {
-			setIsLoading(false);
-			setCardFound(true);
+	function restart() {
+		const keysInStorage = Object.keys(localStorage);
+		if (window.confirm("Are you sure you want to restart?")) {
+			setCardFound(!cardFound);
+			setGiveUp(false);
+			keysInStorage.forEach((key) => {
+				if (key === "createdCard" || key === "perfectCard" || key === "card")
+					localStorage.removeItem(key);
+			});
 		}
-		createCard();
 	}
 
 	function forfeit() {
@@ -70,33 +90,14 @@ const CardGenerator = () => {
 		}
 	}
 
-	function restart() {
-		if (window.confirm("Are you sure you want to restart?")) {
-			setCardFound(!cardFound);
-			setGiveUp(false);
-			localStorage.clear();
-		}
-	}
-
 	return (
 		<>
-			{err && <h2>{err}</h2>}
-
-			{!cardFound && (
+			{err === "" && !cardFound && !isLoading && (
 				<>
-					<button className="random-card" onClick={setUpCard}>
+					<button className="random-card" onClick={() => setUpCard()}>
 						Get a Card!
 					</button>
-					<h2>Or select your own!</h2>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						onChange={selectedCard}
-						value={submittedCard}
-					/>
-					<br />
-					<input onClick={setUpCard} type="submit" value="Set Card" />
+
 					<footer>
 						<p>Developed by Blair</p>
 						<p>
@@ -134,6 +135,8 @@ const CardGenerator = () => {
 					<CardImageFilter setGuessedCard={setGuessedCard} />
 				</div>
 			)}
+
+			{err !== "" && <h2>Error Detected. Please refresh.</h2>}
 		</>
 	);
 };
